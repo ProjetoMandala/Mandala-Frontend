@@ -1,10 +1,10 @@
 <body>
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-md-6 mt-5 mb-5 justificar caixaLogin">
+      <div class="col-md-6 mt-3 justificar">
         <div class="row d-flex justify-content-center">
-          <div class="col-md-10 caixa shadow-sm p-3 mb-5">
-            <h1 class="d-flex justify-content-center mb-3">Cadastro</h1>
+          <div class="col-md-10 caixa shadow-sm p-3">
+            <h1 class="d-flex justify-content-center">Cadastro</h1>
 
             <div class="form-group campo">
               <input
@@ -39,50 +39,60 @@
               <label for="foto">Link da foto</label>
             </div>
 
-            <div class="form-group campo">
-              <input
-                class="form-control"
-                type="password"
-                name="senha"
-                id="senha"
-                required
-              />
-              <label for="senha">Senha</label>
-            </div>
+            <form>
+              <div class="form-row">
+                <div class="form-group col campo">
+                  <input
+                    class="form-control"
+                    type="password"
+                    name="senha"
+                    id="senha"
+                    required
+                  />
+                  <label for="senha">Senha</label>
+                </div>
 
-            <div class="form-group campo">
-              <input
-                class="form-control"
-                type="password"
-                name="confirmSenha"
-                id="confirmSenha"
-                required
-              />
-              <label for="confirmSenha">Confirmação de Senha</label>
-            </div>
+                <div class="form-group col campo">
+                  <input
+                    class="form-control"
+                    type="password"
+                    name="confirmSenha"
+                    id="confirmSenha"
+                    required
+                  />
+                  <label for="confirmSenha">Confirmação de Senha</label>
+                </div>
+              </div>
+            </form>
 
-            <div class="form-group texto-color">
-              <label class="label-cinza" for="dataNasc">Data de Nascimento</label>
-              <input
-                class="form-control"
-                type="date"
-                name="dataNasc"
-                id="dataNasc"
-                required
-              />
-            </div>
+            <form>
+              <div class="form-row row-data">
+                <div class="form-group col texto-color">
+                  <label class="label-cinza" for="dataNasc"
+                    >Data de Nascimento</label
+                  >
+                  <input
+                    class="form-control"
+                    type="date"
+                    name="dataNasc"
+                    id="dataNasc"
+                    required
+                  />
+                </div>
 
-            <div class="form-group texto-color">
-              <label class="label-cinza" for="tipo">Gênero</label>
-              <!-- select - abre na caixa de texto, e permite escrever opções para escolha do usuário -->
-              <!-- Option - opção dentro da caixa de texto para que o usuário escolha -->
-              <select class="form-control" name="tipo" id="tipo">
-                <option>Selecione um gênero:</option>
-                <option value="fem">Feminino</option>
-                <option value="mas">Masculino</option>
-                <option value="outros">Outros(Trans, não-binário)</option>
-              </select>
-            </div>
+                <div class="form-group col texto-color">
+                  <label class="label-cinza" for="tipo">Gênero</label>
+                  <!-- select - abre na caixa de texto, e permite escrever opções para escolha do usuário -->
+                  <!-- Option - opção dentro da caixa de texto para que o usuário escolha -->
+                  <select class="form-control" name="tipo" id="tipo">
+                    <option>Selecione um gênero:</option>
+                    <option value="fem">Feminino</option>
+                    <option value="mas">Masculino</option>
+                    <option value="outros">Outros(Trans, não-binário)</option>
+                  </select>
+                </div>
+              </div>
+            </form>
 
             <div class="d-flex justify-content-around">
               <button type="submit" class="btn botao-roxo m-auto">
@@ -91,7 +101,7 @@
               <!-- criar o routerLink no botão cancelar, para que ele volte a página de cadastro abc-->
             </div>
             <div class="text-center mt-3">
-              <a class="label-cinza" href="" routerLink="/entrar"
+              <a class="roxin" href="" routerLink="/entrar"
                 >Já tem uma conta? Faça login</a
               >
             </div>
