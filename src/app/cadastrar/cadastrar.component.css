@@ -44,6 +44,11 @@ select {
   height: 50px;
 }
 
+.margin-dentro {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
 .campo input {
   width: 100%;
   font-size: 17px;
