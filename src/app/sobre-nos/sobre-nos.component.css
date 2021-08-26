@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap');
-h1 {
+
+/*Conteudo pag*/
+
+.caixaSobre {
+    width: 200%;
+    margin-left: 50%;
+    color: #fff;
+    background-color: #8757df;
+}
+
+.caixaSobre h1 {
+    text-align: center;
     font-family: 'Clicker Script', cursive;
 }
 
-.caixaSobre {
-    background-color: #8757df;
+.caixaSobre p {
+    text-align: justify;
 }
