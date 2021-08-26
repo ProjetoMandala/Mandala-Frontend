@@ -141,3 +141,16 @@ label {
   margin-top: -15px;
   margin-bottom: 15px;
 }
+
+.date-input input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #575757;
+}
+
+select {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #575757;
+  border-radius: 0;
+}
