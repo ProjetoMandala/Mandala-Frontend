@@ -1,0 +1,10 @@
+body{
+    
+    background-image: linear-gradient(rgba(182, 182, 182, 0.159), rgba(182, 182, 182, 0.138)),
+     url('https://i.imgur.com/86WsCbw.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+
+
+}

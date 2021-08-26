@@ -1,7 +1,17 @@
 #img-bg{
-    background-image: url("https://i.imgur.com/jf1hyn5.jpg");
-    min-height: 695px;
+    background-image: url("https://i.imgur.com/4t4eShg.jpg");
+    min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.cor{
+    color: #8757df
+    ;
+}
+
+.buttonEntrar{
+    color:white;
+    background-color: #8757df;
 }
