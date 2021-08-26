@@ -105,23 +105,29 @@ input:focus {
   outline: none;
 }
 
-.campo input:invalid {
-  border-bottom: #f5873d 1px solid;
-}
-
 .preenchido ~ label {
   top: -20px;
   font-size: 12px;
   outline: none;
 }
 
-.campo input:focus {
+.valid ~ label {
+  top: -20px;
+  font-size: 12px;
+  outline: none;
+}
+
+.valid {
   color: #fff;
   border-bottom: 1px solid #fff;
 }
 
-.campo input:focus ~ label {
-  color: #fff;
+.invalid ~ label {
+  color: #f5873d;
+}
+
+.invalid {
+  border-bottom: 1px solid #f5873d !important;
 }
 
 .textoColor,
