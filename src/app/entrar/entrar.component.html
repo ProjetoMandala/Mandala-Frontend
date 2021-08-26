@@ -1,28 +1,44 @@
 <div class="container-fluid">
+  <div class="row d-flex align-items-center">
+    <div class="col-md-6">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 caixa cor">
+          <h1 class="text-center mb-3">Entrar</h1>
 
-    <div class="row d-flex align-items-center">
-        <div class="col-md-6">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6 cor">
-                    <h1 class="text-center mb-3">Entrar</h1>
-                    <div class="form-group">
-                        <label for="usuario">Usuário</label>
-                        <input class="form-control" type="email" name="usuario" id="usuario" placeholder="Digite seu email">
-                    </div>
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua senha">
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn buttonEntrar" routerLink='/menu'>Entrar</button>
-                    </div>
-                    <hr>
-                    <p class="text-center">Ainda não faz parte? <a href="" routerLink='/cadastrar'> Cadastre-se!</a>
-                    </p>
-                </div>
+          <div class="margin-dentro">
+            <div class="form-group campo">
+              <input
+                class="form-control preencher-validate"
+                type="email"
+                name="usuario"
+                id="usuario"
+                (blur)="validatePreenchido()"
+                required
+              />
+              <label for="usuario">Usuário</label>
             </div>
+            <div class="form-group campo">
+              <input
+                class="form-control"
+                type="password"
+                name="senha"
+                id="senha"
+                required
+              />
+              <label for="senha">Senha</label>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn botao-roxo">Entrar</button>
+          </div>
+          <div class="divisor"></div>
+          <p class="text-center">
+            Ainda não faz parte?
+            <a href="" routerLink="/cadastrar"> Cadastre-se!</a>
+          </p>
         </div>
-        <div class="col-md-6" id="img-bg">
-        </div>
+      </div>
     </div>
+    <div class="col-md-6" id="img-bg"></div>
+  </div>
 </div>
