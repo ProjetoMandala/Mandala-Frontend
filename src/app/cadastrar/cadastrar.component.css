@@ -40,18 +40,14 @@ select {
 
 .campo input {
   width: 100%;
-  padding: 10px;
   font-size: 17px;
-  font-weight: 600;
   background: transparent;
   color: #575757;
   border: none;
   outline: none;
   border-bottom: 1px solid #575757;
-  margin-bottom: 30px;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  border-radius: 0;
+  margin-bottom: 40px;
 }
 
 .campo input:focus {
@@ -80,7 +76,7 @@ input:focus {
   padding: 10px 0;
   font-size: 16px;
   font-weight: 600;
-  color: #575757;
+  color: #777;
   pointer-events: none;
   transition: 100ms;
 }
@@ -89,9 +85,17 @@ input:focus {
 .campo input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #575757;
   font-size: 12px;
   outline: none;
+}
+
+.campo input:focus {
+  color: #404040;
+  border-bottom: 1px solid #8757df;
+}
+
+.campo input:focus ~ label {
+  color: #8757df;
 }
 
 .textoColor,
@@ -102,6 +106,24 @@ select {
 }
 
 .label-cinza {
-  color: #575757;
+  color: #777;
   font-weight: 600;
+}
+
+.botao-roxo {
+  background-color: transparent;
+  padding: 12px 30px;
+  color: #8757df;
+  border: 2px #8757df solid;
+  font-weight: 500;
+}
+
+.botao-roxo:hover {
+  background-color: transparent;
+  color: #fff;
+  background-color: #8757df;
+}
+
+label {
+  transform: translate3d(0, 4px, 0) scale(1);
 }
