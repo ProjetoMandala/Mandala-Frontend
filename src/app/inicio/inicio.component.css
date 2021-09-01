@@ -45,3 +45,86 @@
   background-color: #8757df;
   border-radius: 0px 6px 6px 0px;
 }
+
+.campo input,
+textarea {
+  width: 100%;
+  font-size: 17px;
+  background: transparent;
+  color: #575757;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #442b72;
+  border-radius: 0;
+  margin-bottom: 30px;
+}
+
+.campo input:focus {
+  outline: none;
+}
+
+.campo {
+  position: relative;
+}
+
+input:focus {
+  outline: 0;
+}
+
+input:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+.campo label {
+  position: absolute;
+  top: 0;
+  margin-left: 12px;
+  outline: none;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #777;
+  pointer-events: none;
+  transition: 100ms;
+}
+
+.campo input:focus ~ label,
+.campo input:valid ~ label {
+  top: -20px;
+  font-size: 12px;
+  outline: none;
+}
+
+.campo input:focus {
+  color: #404040;
+  border-bottom: 1px solid #8757df;
+}
+
+.campo input:focus ~ label {
+  color: #8757df;
+}
+
+.btn-outro-roxo {
+  color: #fff;
+  background: #8757df;
+}
+
+.btn-outro-roxo:hover {
+  background: #613ea3;
+}
+
+.btn-roxo {
+  color: #8757df;
+  border: #8757df solid 1px;
+}
+
+.btn-roxo:hover {
+  background: #8757df;
+  color: #fff;
+}
+
+.teste {
+  border-radius: 10px;
+}
