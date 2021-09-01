@@ -1,6 +1,5 @@
 import { Postagem } from "./Postagem";
 
-
 export class Usuario {
     /*public biografia: string;*/
     public dtNascimento: Date;
