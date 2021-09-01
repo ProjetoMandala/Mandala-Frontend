@@ -1,0 +1,47 @@
+.bg-roxo {
+  background: rgb(81, 50, 139);
+  background: linear-gradient(
+    0deg,
+    rgba(81, 50, 139, 1) 0%,
+    rgba(165, 115, 255, 1) 30%,
+    rgba(169, 122, 255, 1) 52%,
+    rgba(167, 120, 255, 1) 73%,
+    rgba(81, 50, 139, 1) 100%
+  );
+}
+
+.nav-link {
+  color: #5865f2;
+}
+
+.nav-link {
+  color: #fff;
+  background-color: #442e6d;
+}
+
+.primeiro {
+  border-radius: 6px 0px 0px 6px;
+}
+
+.primeiro.active {
+  background-color: #8757df;
+  border-radius: 6px 0px 0px 6px;
+}
+
+.segundo {
+  border-radius: 0px;
+}
+
+.segundo.active {
+  background-color: #8757df;
+  border-radius: 0px;
+}
+
+.terceiro {
+  border-radius: 0px 6px 6px 0px;
+}
+
+.terceiro.active {
+  background-color: #8757df;
+  border-radius: 0px 6px 6px 0px;
+}

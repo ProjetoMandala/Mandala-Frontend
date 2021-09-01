@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="row bg-secondary d-flex align-items-center">
+    <div class="row bg-roxo d-flex align-items-center">
         <!-- align-items-center => alinha os itens na vertical -->
 
         <div class="col-md-6">
@@ -20,34 +20,83 @@
         </div>
 
         <div class="col-md-6">
-            <img src="https://i.imgur.com/PiWN0y3.png" alt="" height="500px">
+            <img src="https://i.imgur.com/0LkfPd7.png" alt="" height="500px">
         </div>
 
     </div>
 </div>
 
-<div class="container mb-5 mt-5" id="postagens"> 
-    <nav>
-        <div class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+<div class="container mb-5 mt-5" id="posts">
+  <ul
+    class="nav nav-pills d-flex just justify-content-center mb-3 mt-0"
+    id="pills-tab"
+    role="tablist"
+  >
+    <li class="nav-item" role="presentation">
+      <a
+        class="nav-link active primeiro"
+        id="pills-home-tab"
+        data-toggle="pill"
+        href="#pills-todos"
+        role="tab"
+        aria-controls="pills-todos"
+        aria-selected="true"
+        >Todos os posts</a
+      >
+    </li>
 
-            <a class="nav-item nav-link active text-secondary font-weight-bold" id="todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab"
-                aria-controls="todasPostagens" aria-selected="true">Todas as postagens</a>
+    <li class="nav-item" role="presentation">
+      <a
+        class="nav-link segundo"
+        id="pills-profile-tab"
+        data-toggle="pill"
+        href="#pills-profile"
+        role="tab"
+        aria-controls="pills-profile"
+        aria-selected="false"
+        >Meus posts</a
+      >
+    </li>
+    <li class="nav-item" role="presentation">
+      <a
+        class="nav-link terceiro"
+        id="pills-contact-tab"
+        data-toggle="pill"
+        href="#pills-contact"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+        >Posts por tema</a
+      >
+    </li>
+  </ul>
 
-            <a class="nav-item nav-link text-secondary font-weight-bold" id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab"
-                aria-controls="minhasPostagens" aria-selected="false">Minhas Postagens</a>
-
-            <a class="nav-item nav-link text-secondary font-weight-bold" id="postagemTema-tab" data-toggle="tab" href="#postagemTema" role="tab"
-                aria-controls="postagemTema" aria-selected="false">Postagens por Tema</a>
-                
-        </div>
-    </nav>
-
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">...</div>
-        <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">...</div>
-        <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="postagemTema-tab">...</div>
+  <div class="tab-content" id="pills-tabContent">
+    <div
+      class="tab-pane fade show active"
+      id="pills-todos"
+      role="tabpanel"
+      aria-labelledby="pills-todos-tab"
+    >
+      Todos os posts
     </div>
-
+    <div
+      class="tab-pane fade"
+      id="pills-profile"
+      role="tabpanel"
+      aria-labelledby="pills-profile-tab"
+    >
+      Meus posts
+    </div>
+    <div
+      class="tab-pane fade"
+      id="pills-contact"
+      role="tabpanel"
+      aria-labelledby="pills-contact-tab"
+    >
+      Posts por tema
+    </div>
+  </div>
 </div>
 
   
