@@ -15,6 +15,8 @@
 .caixa {
   background-color: #8757df;
   border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 input {
@@ -97,4 +99,14 @@ input {
 
 th {
   color: #fff;
+}
+
+.butao-branco {
+  background-color: #fff;
+  color: #8757df;
+  transition: 200ms;
+}
+
+.butao-branco:hover {
+  background-color: rgb(207, 207, 207);
 }
