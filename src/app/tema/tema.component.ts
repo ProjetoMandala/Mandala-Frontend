@@ -7,19 +7,16 @@ import { TemaService } from '../service/tema.service';
 @Component({
   selector: 'app-tema',
   templateUrl: './tema.component.html',
-  styleUrls: ['./tema.component.css']
+  styleUrls: ['./tema.component.css'],
 })
 export class TemaComponent implements OnInit {
-
-
   temaCad: Tema = new Tema();
   listaTema: Tema[];
 
-  constructor(private router: Router,
-    private temaService: TemaService) { }
+  constructor(private router: Router, private temaService: TemaService) {}
 
-  ngOnInit(){
-    window.scroll(0,0)
+  ngOnInit() {
+    window.scroll(0, 0);
     if (environment.token == '') {
       alert('Sua seção expirou, faça o login novamente');
       this.router.navigate(['/entrar']);
@@ -29,26 +26,23 @@ export class TemaComponent implements OnInit {
     this.findAllTemas();
   }
 
-    //buscando os campos na tabela
-    findAllTemas(){
-      this.temaService.getAllTema().subscribe((resp: Tema[]) =>{  
-          this.listaTema = resp  
-      })
-    }
+  //buscando os campos na tabela
+  findAllTemas() {
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listaTema = resp;
+    });
+  }
 
-  cadastrarTema(  ){
-    this.temaService.postTema(this.temaCad).subscribe((resp: Tema)=>{
+  cadastrarTema() {
+    this.temaService.postTema(this.temaCad).subscribe((resp: Tema) => {
       this.temaCad = resp;
-      alert('Tema cadastrado, com sucesso😉')
+      alert('Tema cadastrado, com sucesso😉');
 
       //limpando os campos após  cadastro
       this.temaCad = new Tema();
-      
+
       //depois atualize a nossa lista de temas
-      this.findAllTemas()
-
-    })
+      this.findAllTemas();
+    });
   }
-
-
 }
