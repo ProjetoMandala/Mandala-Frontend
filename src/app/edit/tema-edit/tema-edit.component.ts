@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment.prod';
 export class TemaEditComponent implements OnInit {
 
   temaTras: Tema = new Tema();
+  
 
   constructor(
       private temaService: TemaService, 

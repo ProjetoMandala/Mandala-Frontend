@@ -1,0 +1,93 @@
+body {
+    background-color: #8757df6e;
+    background-image: url("https://i.imgur.com/AiJn5ID.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 850px;
+    background-position: top -393px left -389px;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #8757df;
+}
+
+.justificar {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.caixa {
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.roxin {
+    color: #8757df;
+    font-weight: 600;
+}
+
+.campo input {
+    width: 100%;
+    font-size: 17px;
+    background: transparent;
+    color: #575757;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #575757;
+    border-radius: 0;
+    margin-bottom: 30px;
+}
+
+.campo {
+    position: relative;
+}
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    outline: none;
+}
+
+.campo label {
+    position: absolute;
+    top: 0;
+    outline: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #777;
+    pointer-events: none;
+    /* transition: 100ms; */
+    transition: .5s;
+}
+
+.campo input:focus~label,
+.campo input:valid~label {
+    top: -20px;
+    font-size: 12px;
+    outline: none;
+}
+
+.campo input:focus {
+    color: #404040;
+    border-bottom: 1px solid #8757df;
+}
+
+.campo input:focus~label {
+    color: #8757df;
+}
+
+input {
+    color: #575757;
+    background-color: transparent;
+}
+
+.label-cinza {
+    color: #777;
+    font-weight: 600;
+}

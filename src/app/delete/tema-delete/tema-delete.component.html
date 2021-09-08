@@ -1,4 +1,51 @@
-<div class="container mb-5 mt-5 caixaTexto">
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-3 justificar">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-10 caixa shadow-sm p-3">
+                        <h1 class="d-flex justify-content-center">Apagar Tema</h1>
+
+                        <div class="row mb-3">
+                            <div class="col-md-12 editTitulo">
+                                <h6 class=" text-center">
+                                    Você tem certeza que deseja apagar esse Tema?🤔<br>Todas as postagens relacionadas a ele, serão igualmente apagadas.😁
+                                </h6>
+                            </div>
+                        </div>
+
+                        <div class="margin-dentro">
+                            <div class="form-group campo">
+
+                                <p class=" text-center ">
+                                    Tema: {{temaDelet.titulo}}
+                                </p>
+                                <p>Descrição: {{temaDelet.descricao}}</p>
+                                <p>Palavra: {{temaDelet.palavraChave}} </p>
+                                <p>Imagem:</p>
+                                <img src="{{temaDelet.imagem}} " alt="" width="250px">
+                            </div>
+
+
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-outline-danger  mr-5 px-5" routerLink='/tema'> Não</button>
+                            <button class="btn btn-outline-success px-5" (click)='apagar()'>Sim</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+<!-- fim -->
+<!-- <div class="container mb-5 mt-5 caixaTexto">
     <div class="row mb-5">
         <div class="col-md-12">
             <h1 class="ediTitulo mt-5"> Apagar Tema</h1>
@@ -15,14 +62,14 @@
 
     <div class="row d-flex justify-content-center mt-5">
         <div class="col-md-6 ">
-            <div class="card-columns d-flex justify-content-center caixaPostagem">
+            <div class="card-columns d-flex justify-content-center ">
 
                 <h5 class=" text-center ">
                     Tema: {{temaDelet.titulo}}
                 </h5>
                 <p>Descrição: {{temaDelet.descricao}}</p>
                 <p>Palavra:{{temaDelet.palavraChave}} </p>
-                <img src="{{temaDelet.imagem}} " alt="">
+                <img src="{{temaDelet.imagem}} " alt="" width="250px">
             </div>
 
             <div class="d-flex justify-content-center mt-5 mb-5">
@@ -34,4 +81,4 @@
 
     </div>
 
-</div>
+</div> -->
