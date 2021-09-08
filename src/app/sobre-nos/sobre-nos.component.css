@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 /*Conteudo pag*/
+body{
+    background-color: #8757df;
+}
+
+.textoSobre{
+    font-family: 'Open Sans', sans-serif;
+}
 
 .caixaSobre {
-    width: 200%;
-    margin-left: 50%;
+    /* width: 200%;
+    margin-left: 50%; */
     color: #fff;
     background-color: #8757df;
 }
@@ -14,6 +22,21 @@
     font-family: 'Clicker Script', cursive;
 }
 
-.caixaSobre p {
-    text-align: justify;
+.caixaSobrePerfil {
+    color: #fff;
+    background-color: #8757df;
+}
+
+.fa{
+    font-size: 35pt;
+    color: white;
+    padding: 10px;
+}
+
+.fa-linkedin-square:hover{
+    color: #0072b1;
+}
+
+.fa-github-square:hover{
+    color: #2D333B;
 }
