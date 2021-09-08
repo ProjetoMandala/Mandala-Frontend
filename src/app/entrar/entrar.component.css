@@ -86,6 +86,13 @@ input:focus {
   outline: 0;
 }
 
+.campo input:-webkit-autofill {
+  background-color: transparent !important;
+  box-shadow: 0 0 0 50px #8757df inset;
+  -webkit-box-shadow: 0 0 0 50px #8757df inset;
+  -webkit-text-fill-color: #fff;
+}
+
 .campo label {
   position: absolute;
   top: 0;
