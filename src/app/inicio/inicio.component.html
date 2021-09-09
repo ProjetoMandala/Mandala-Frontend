@@ -27,21 +27,9 @@
 </div>
 
 <div class="container mb-5 mt-5" id="posts">
-  <ul
-    class="nav nav-pills d-flex just justify-content-center mb-3 mt-0"
-    id="pills-tab"
-    role="tablist"
-  >
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link active primeiro"
-        id="pills-home-tab"
-        data-toggle="pill"
-        href="#pills-todos"
-        role="tab"
-        aria-controls="pills-todos"
-        aria-selected="true"
-        >Todos os posts</a
+    <ul class="nav nav-pills d-flex just justify-content-center mb-3 mt-0" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active primeiro" id="pills-home-tab" data-toggle="pill" href="#pills-todos" role="tab" aria-controls="pills-todos" aria-selected="true">Todos os posts</a
       >
     </li>
 
@@ -113,27 +101,37 @@
         <div class="modal-body">
 
           <div class="form-group campo">
-            <input type="text" class="form-control" id="titulo" required>
-            <label for="titulo">Título</label>
+            <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" required>
+            <label for="titulo">Título *</label>
           </div>
 
           <div class="form-group campo">
-            <textarea class="form-control" name="texto" id="texto" rows="3" placeholder="Texto"></textarea>
+            <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3" placeholder="Texto *"></textarea>
+          </div>
+
+          <div class="form-group campo">
+            <input [(ngModel)]='postagem.imagem' type="text" class="form-control" id="imagem" required>
+            <label for="imagem">Imagem</label>
+          </div>
+
+          <div class="form-group campo">
+            <input [(ngModel)]='postagem.video' type="text" class="form-control" id="video" required>
+            <label for="video">Vídeo</label>
           </div>
 
           <div class="form-group">
             <label for="tema">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>: </label>
-            <select name="tema" id="tema" class="form-control">
-              <option value="">Temas</option>
+            <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+              <option *ngFor='let temas of listaTema' value="{{temas.id}}">{{temas.titulo}}</option>
             </select>
-              
-          </div>
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-roxo" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-outro-roxo">Publicar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-roxo" data-dismiss="modal">Cancelar</button>
+    <button type="button" class="btn btn-outro-roxo" (click)='publicar()'>Publicar</button>
+</div>
+</div>
+</div>
+</div>

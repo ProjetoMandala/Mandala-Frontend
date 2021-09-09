@@ -7,7 +7,10 @@ export class Postagem {
   public imagem: string;
   public texto: string;
   public titulo: string;
-  public usuario: Usuario;
   public video: string;
+
+  //FK
   public tema: Tema;
+  public usuario: Usuario;
+
 }
