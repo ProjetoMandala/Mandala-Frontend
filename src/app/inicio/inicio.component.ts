@@ -36,6 +36,7 @@ export class InicioComponent implements OnInit {
 
   //busca por descrição tema
   temaDescricao: string
+  
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -77,8 +78,11 @@ export class InicioComponent implements OnInit {
 findByIdUsu(){
 this.authService.getBiIdUser(this.idUser).subscribe((resp: Usuario)=>{
   this.usuarioFK = resp
+
+  console.log(this.usuarioFK)
 })
 }
+
 //postagem
 publicar(){
   //id do tema
