@@ -79,7 +79,7 @@
 
         </div>
 
-
+<!-- ! minhas postagens -->
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <div class=" col-md-12 d-flex justify-content-center" *ngFor='let itemPost of usuarioFK.postagem'>
                 <div class="card " style="width: 50rem;">
@@ -90,6 +90,8 @@
                         <h5 class="card-text">{{itemPost.titulo}}</h5>
                         <!-- <small><p class="card-text">Tema: {{itemPost.tema.titulo}}</p> </small> -->
                         <p class="card-text">{{itemPost.texto}}</p>
+                        <button class="btn btn-info mr-2" [routerLink]="['/postagem-edit', itemPost.id]">Editar</button>
+                        <button class="btn btn-danger" [routerLink]="['/postagem-delete', itemPost.id]">Apagar</button>
                     </div>
                 </div>
             </div>
