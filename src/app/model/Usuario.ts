@@ -10,4 +10,5 @@ export class Usuario {
   public postagem: Postagem[];
   public senha: string;
   public usuario: string;
+  public tipo: string;
 }
