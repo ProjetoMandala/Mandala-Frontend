@@ -35,7 +35,7 @@ export class InicioComponent implements OnInit {
   tituloPost: string
 
   //busca por descrição tema
-  temaDescricao: string
+  temaTitulo: string
   
   constructor(
     private router: Router,
@@ -73,6 +73,20 @@ export class InicioComponent implements OnInit {
       this.temaFK = resp    
     })
   }
+//buscar por titulo tema
+  findByTemaTitulo(){
+
+    if (this.temaTitulo == '') {
+      this.getAllPostagens()
+      
+    } else {
+      this.temaService.getByIdTemaTitulo(this.temaTitulo).subscribe((resp: Tema[])=>{
+  
+        this.listaTema = resp
+      })
+      
+    }
+  }
 
 //usuario
 findByIdUsu(){
@@ -109,6 +123,20 @@ getAllPostagens(){
   this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
       this.listaPostagens = resp  
   })
+}
+
+//busca por titulo
+findByTituloPostagem(){
+
+  if(this.tituloPost == ''){
+    this.getAllPostagens()
+  }
+  else{
+    this.postagemService.getByIdTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
+      this.listaPostagens = resp
+    })
+
+  }
 }
 
 
