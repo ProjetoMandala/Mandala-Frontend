@@ -8,6 +8,8 @@ export class Postagem {
   public texto: string;
   public titulo: string;
   public video: string;
+  public data: Date;
+
 
   //FK
   public tema: Tema;

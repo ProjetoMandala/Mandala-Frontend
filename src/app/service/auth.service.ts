@@ -6,43 +6,59 @@ import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-    //variavel token
-token = {
-  headers: new HttpHeaders().set('Authorization', environment.token)
-}
-refreshToken(){
-  this.token = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
-  }
-}
-
-  entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
-    return this.http.post<UsuarioLogin>("https://projetomandala.herokuapp.com/usuario/logar", usuarioLogin)
+  //variavel token
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token),
+  };
+  refreshToken() {
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token),
+    };
   }
 
-  cadastrar(usuario: Usuario): Observable<Usuario>{
-return this.http.post<Usuario>("https://projetomandala.herokuapp.com/usuario/cadastrar", usuario)
+  entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
+    return this.http.post<UsuarioLogin>(
+      'https://projetomandala.herokuapp.com/usuario/logar',
+      usuarioLogin
+    );
   }
-  
-  logado(){
-    let ok: boolean = false
 
-    if(environment.token != ''){
-      ok = true
+  cadastrar(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(
+      'https://projetomandala.herokuapp.com/usuario/cadastrar',
+      usuario
+    );
+  }
+
+  logado() {
+    let ok: boolean = false;
+
+    if (environment.token != '') {
+      ok = true;
     }
 
-    return ok
+    return ok;
   }
 
-  getBiIdUser(id:number): Observable<Usuario>{
-    return this.http.get<Usuario>(`https://projetomandala.herokuapp.com/usuario/${id}`, this.token);
+  getBiIdUser(id: number): Observable<Usuario> {
+    return this.http.get<Usuario>(
+      `https://projetomandala.herokuapp.com/usuario/${id}`,
+      this.token
+    );
   }
 
+  adm() {
+    let ok: boolean = false;
 
+    if (environment.tipo == 'adm') {
+      ok = true;
+    }
+
+    return ok;
+  }
 }

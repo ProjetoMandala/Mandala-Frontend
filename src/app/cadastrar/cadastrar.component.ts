@@ -14,6 +14,7 @@ export class CadastrarComponent implements OnInit {
   usuarioCad: Usuario = new Usuario
   confirmeSenha: string
   gen: string
+  tipoUsuario: string
   
 
   constructor(private authService: AuthService, private router: Router) {}
@@ -41,9 +42,17 @@ export class CadastrarComponent implements OnInit {
     this.gen = event.target.value
   }
 
+  tipoUser(event: any){
+
+    this.tipoUsuario = event.target.value
+
+  }
+
   cadastrar(){
 
     this.usuarioCad.genero = this.gen;
+
+    this.usuarioCad.tipo = this.tipoUsuario
 
     if (this.usuarioCad.senha != this.confirmeSenha) {
 
@@ -60,5 +69,6 @@ export class CadastrarComponent implements OnInit {
     }
 
   }
+
 
 }
