@@ -89,11 +89,13 @@ this.idUsuario= this.route.snapshot.params['id']
           alert("As senhas estão diferentes.");
           
         } else {
+          
+          console.log(this.usuarioEdit)
           this.authService.putUsuario(this.usuarioEdit).subscribe((resp: Usuario) =>{
     
             this.usuarioEdit = resp
 
-            console.log('this.usuarioEdit')
+            
 
             this.router.navigate(["/inicio"])
             alert("Usuário editado com sucesso! Faça seu login")

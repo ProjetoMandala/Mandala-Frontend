@@ -1,11 +1,6 @@
-body {
+.caixa {
     background-color: #8757df;
-    background-image: url("https://i.imgur.com/AiJn5ID.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 850px;
-    background-position: top -393px left -389px;
-    min-height: 100vh;
+    border-radius: 15px;
 }
 
 h1 {
@@ -18,15 +13,6 @@ h1 {
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-}
-
-.caixa {
-    /* background: linear-gradient(
-      rgba(238, 238, 238, 0.336),
-      rgba(161, 161, 161, 0.138)
-    ); */
-    background-color: #fff;
-    border-radius: 15px;
 }
 
 .roxin {
@@ -44,14 +30,15 @@ select {
     margin-right: 30px;
 }
 
-.campo input {
+.campo input,
+select {
     width: 100%;
     font-size: 17px;
     background: transparent;
-    color: #575757;
+    color: #ffffff;
     border: none;
     outline: none;
-    border-bottom: 1px solid #575757;
+    border-bottom: 1px solid #ffffff;
     border-radius: 0;
     margin-bottom: 30px;
 }
@@ -81,7 +68,7 @@ input:focus {
     padding: 10px 0;
     font-size: 16px;
     font-weight: 600;
-    color: #777;
+    color: rgb(255, 255, 255);
     pointer-events: none;
     transition: 100ms;
 }
@@ -94,7 +81,7 @@ input:focus {
 }
 
 .campo input:focus {
-    color: #404040;
+    color: #ffffff;
     border-bottom: 1px solid #8757df;
 }
 
@@ -105,12 +92,12 @@ input:focus {
 .textoColor,
 input,
 select {
-    color: #575757;
+    color: #ffffff;
     background-color: transparent;
 }
 
 .label-cinza {
-    color: #777;
+    color: rgb(255, 255, 255);
     font-weight: 600;
 }
 
@@ -140,13 +127,13 @@ label {
 .date-input input {
     border: none;
     outline: none;
-    border-bottom: 1px solid #575757;
+    border-bottom: 1px solid #fdfdfd;
 }
 
 select {
     border: none;
     outline: none;
-    border-bottom: 1px solid #575757;
+    border-bottom: 1px solid #ffffff;
     border-radius: 0;
 }
 
