@@ -19,11 +19,11 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-     //verificando se o usuario está logado
-     if (environment.token == '') {
-      // alert("Sua seção expirou, faça o login novamente.");
-      this.router.navigate(['/entrar'])
-    }
+    //  //verificando se o usuario está logado
+    //  if (environment.token == '') {
+    //   // alert("Sua seção expirou, faça o login novamente.");
+    //   this.router.navigate(['/entrar'])
+    // }
   }
 
   sair() {

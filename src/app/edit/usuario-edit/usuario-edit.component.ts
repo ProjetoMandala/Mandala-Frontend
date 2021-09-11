@@ -11,10 +11,12 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class UsuarioEditComponent implements OnInit {
 
-  usuarioEdit: Usuario = new Usuario();
- idUsuario: number;
- confirmarSenha: string;
- tipoUsu: string;
+usuarioEdit: Usuario = new Usuario();
+idUsuario: number;
+confirmarSenha: string;
+tipoUsu: string;
+gen: string
+
 
   constructor(
     private router: Router, 
@@ -24,38 +26,17 @@ export class UsuarioEditComponent implements OnInit {
 
   ngOnInit() {
 
+    window.scroll(0,0)
     //verificando se o usuario está logado
     if (environment.token == '') {
       // alert("Sua seção expirou, faça o login novamente.");
       this.router.navigate(['/entrar'])
     }
 
-    //pegando o parametro da rota
-    let id = this.route.snapshot.params['id']
-
+   
+this.idUsuario= this.route.snapshot.params['id']
     this.findByIdUsuario(this.idUsuario)
 
-  }
-
-
-  ///tratamento d campo email
-  validatePreenchido() {
-    let usuario = <HTMLInputElement>document.getElementById('usuario');
-    
-    if (usuario?.value != '') {
-      usuario.classList.add('preenchido');
-      if (usuario.checkValidity()) {
-        usuario.classList.add('valid');
-        usuario.classList.remove('invalid');
-        usuario.classList.remove('preenchido');
-      } else {
-        usuario.classList.remove('valid');
-        usuario.classList.add('invalid');
-      }
-    } else {
-      usuario.classList.remove('valid');
-      usuario.classList.remove('preenchido');
-    }
   }
 
   findByIdUsuario(id: number){
@@ -64,12 +45,26 @@ export class UsuarioEditComponent implements OnInit {
       this.usuarioEdit = resp
     })
   }
+
+  ///tratamento d campo email
+  validatePreenchido() {
+    let usuario = <HTMLInputElement>document.getElementById('email');
+    if (usuario?.value != '') {
+      usuario.classList.add('preenchido');
+    } else {
+      usuario.classList.remove('preenchido');
+    }
+  }
   
   confirmSenha(event: any){
     this.confirmarSenha = event.target.value
   
   }
   
+  genero(event: any){
+    this.gen = event.target.value
+  }
+
   tipoUsuario(event: any){
   
     this.tipoUsu = event.target.value
@@ -78,7 +73,10 @@ export class UsuarioEditComponent implements OnInit {
 
   atualizar(){
 
+    this.usuarioEdit.genero = this.gen;
+
     this.usuarioEdit.tipo= this.tipoUsu;
+
    
       if (this.usuarioEdit.senha.length < 5) {
       
@@ -93,15 +91,18 @@ export class UsuarioEditComponent implements OnInit {
         } else {
           this.authService.putUsuario(this.usuarioEdit).subscribe((resp: Usuario) =>{
     
-            this.usuarioEdit = resp;
-            // this.router.navigate(["/inicio"])
+            this.usuarioEdit = resp
+
+            console.log('this.usuarioEdit')
+
+            this.router.navigate(["/inicio"])
             alert("Usuário editado com sucesso! Faça seu login")
+           
             environment.token=''
             environment.nome = ''
             environment.imagem_perfil = ''    
             environment.tipo=''
-            environment.id = 0
-    
+            environment.id = 0    
             this.router.navigate(['/entrar'])
     
           })
