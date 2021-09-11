@@ -35,6 +35,16 @@ export class AuthService {
     );
   }
 
+
+      //metodo de cadastrar o usuario
+putUsuario(usuario: Usuario): Observable<Usuario>{
+
+  return this.http.put<Usuario>('https://projetomandala.herokuapp.com/usuario/alterar', usuario);
+
+}
+
+
+
   logado() {
     let ok: boolean = false;
 
@@ -61,4 +71,9 @@ export class AuthService {
 
     return ok;
   }
+
+
+
+
+
 }

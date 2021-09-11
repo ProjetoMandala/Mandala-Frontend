@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
@@ -9,14 +9,21 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class MenuComponent implements OnInit {
 
-  nome = environment.nome
-  imagem_perfil = environment.imagem_perfil
+  nome = environment.nome;
+  imagem_perfil = environment.imagem_perfil;
+  idUsu = environment.id;
 
   constructor(
-    private router: Router
+    private router: Router, 
+    private route: ActivatedRoute, 
   ) { }
 
   ngOnInit() {
+     //verificando se o usuario está logado
+     if (environment.token == '') {
+      // alert("Sua seção expirou, faça o login novamente.");
+      this.router.navigate(['/entrar'])
+    }
   }
 
   sair() {
@@ -25,6 +32,7 @@ export class MenuComponent implements OnInit {
     environment.nome = ''
     environment.imagem_perfil = ''
     environment.id = 0
+    // this.router.navigate(['/entrar'])
   }
 
 }
