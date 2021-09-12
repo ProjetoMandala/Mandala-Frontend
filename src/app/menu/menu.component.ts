@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -15,25 +16,27 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private router: Router, 
-    private route: ActivatedRoute, 
+    private authService: AuthService 
   ) { }
 
   ngOnInit() {
     //  //verificando se o usuario está logado
-    //  if (environment.token == '') {
-    //   // alert("Sua seção expirou, faça o login novamente.");
-    //   this.router.navigate(['/entrar'])
-    // }
+     //verificando se o usuario está logado
+     if (environment.token == '') {
+      // alert("Sua seção expirou, faça o login novamente.");
+      this.router.navigate(['/entrar'])
+    }
+    this.authService.refreshToken()
   }
 
   sair() {
-        // this.router.navigate(['/entrar'])
-        this.router.navigate(["/inicio"])
-    environment.token=''
-    environment.nome = ''
-    environment.imagem_perfil = ''    
-    environment.tipo=''
-    environment.id = 0    
+    
+    environment.token='';
+    environment.nome = '';
+    environment.imagem_perfil = '';  
+    environment.tipo='';
+    environment.id = 0 ;  
+     
     this.router.navigate(['/entrar'])
   }
 
