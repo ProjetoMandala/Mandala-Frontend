@@ -32,7 +32,7 @@ gen: string
       // alert("Sua seção expirou, faça o login novamente.");
       this.router.navigate(['/entrar'])
     }
-
+    this.authService.refreshToken()
    
 this.idUsuario= this.route.snapshot.params['id']
     this.findByIdUsuario(this.idUsuario)

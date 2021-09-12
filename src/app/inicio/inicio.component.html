@@ -64,7 +64,7 @@
                                         <label for="video">Vídeo</label>
                                     </div>
                                     <div class="form-group">
-                                        <label for="tema">Escolha um tema <a data-dismiss="modal" routerLink="/tema">ou cadastre um novo</a>: </label>
+                                        <label for="tema">Escolha um tema <a data-dismiss="modal" routerLink="/tema" *ngIf='authService.adm()'>ou cadastre um novo</a>: </label>
                                         <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                                           <option *ngFor='let temas of listaTema' value="{{temas.id}}">{{temas.titulo}}</option>
                                         </select>

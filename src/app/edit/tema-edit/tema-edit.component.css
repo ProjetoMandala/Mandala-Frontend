@@ -1,11 +1,6 @@
-body {
-    background-color: #8757dfaf;
-    background-image: url("https://i.imgur.com/AiJn5ID.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 850px;
-    background-position: top -393px left -389px;
-    min-height: 100vh;
+.caixa {
+    background-color: #8757df;
+    border-radius: 15px;
 }
 
 h1 {
@@ -20,26 +15,37 @@ h1 {
     transform: translateY(-50%);
 }
 
-.caixa {
-    background-color: #fff;
-    border-radius: 15px;
-}
-
 .roxin {
     color: #8757df;
     font-weight: 600;
 }
 
-.campo input {
+input,
+select {
+    height: 50px;
+}
+
+.margin-dentro {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.campo input,
+textarea,
+select {
     width: 100%;
     font-size: 17px;
     background: transparent;
-    color: #575757;
+    color: #ffffff;
     border: none;
     outline: none;
-    border-bottom: 1px solid #575757;
+    border-bottom: 1px solid #ffffff;
     border-radius: 0;
     margin-bottom: 30px;
+}
+
+.campo input:focus {
+    outline: none;
 }
 
 .campo {
@@ -47,10 +53,13 @@ h1 {
 }
 
 input:focus {
+    outline: 0;
+}
+
+input:focus {
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
-    outline: none;
 }
 
 .campo label {
@@ -60,10 +69,9 @@ input:focus {
     padding: 10px 0;
     font-size: 16px;
     font-weight: 600;
-    color: #777;
+    color: rgb(255, 255, 255);
     pointer-events: none;
-    /* transition: 100ms; */
-    transition: .5s;
+    transition: 100ms;
 }
 
 .campo input:focus~label,
@@ -74,7 +82,7 @@ input:focus {
 }
 
 .campo input:focus {
-    color: #404040;
+    color: #ffffff;
     border-bottom: 1px solid #8757df;
 }
 
@@ -82,12 +90,56 @@ input:focus {
     color: #8757df;
 }
 
-input {
-    color: #575757;
+.textoColor,
+input,
+select {
+    color: #ffffff;
     background-color: transparent;
 }
 
 .label-cinza {
-    color: #777;
+    color: rgb(255, 255, 255);
     font-weight: 600;
+}
+
+.botao-roxo {
+    background-color: transparent;
+    padding: 12px 30px;
+    color: #8757df;
+    border: 2px #8757df solid;
+    font-weight: 500;
+}
+
+.botao-roxo:hover {
+    background-color: transparent;
+    color: #fff;
+    background-color: #8757df;
+}
+
+label {
+    transform: translate3d(0, 4px, 0) scale(1);
+}
+
+.row-data {
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.date-input input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fdfdfd;
+}
+
+select {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ffffff;
+    border-radius: 0;
+}
+
+.preenchido~label {
+    top: -20px;
+    font-size: 12px;
+    outline: none;
 }

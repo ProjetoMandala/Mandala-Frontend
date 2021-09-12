@@ -31,6 +31,7 @@ select {
 }
 
 .campo input,
+textarea,
 select {
     width: 100%;
     font-size: 17px;
@@ -141,4 +142,8 @@ select {
     top: -20px;
     font-size: 12px;
     outline: none;
+}
+
+.aEdit {
+    color: #94fd00;
 }

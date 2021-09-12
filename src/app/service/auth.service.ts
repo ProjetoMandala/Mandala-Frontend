@@ -63,13 +63,17 @@ putUsuario(usuario: Usuario): Observable<Usuario>{
   }
 
   adm() {
-    let ok: boolean = false;
+    
+    let ok: boolean ;
 
     if (environment.tipo == 'adm') {
       ok = true;
+    }else{
+      ok = false;
     }
-
     return ok;
+
+  
   }
 
 
