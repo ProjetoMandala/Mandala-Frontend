@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -21,7 +22,8 @@ gen: string
   constructor(
     private router: Router, 
     private route: ActivatedRoute, 
-    private authService: AuthService
+    private authService: AuthService,
+    private alertas: AlertasService 
   ) { }
 
   ngOnInit() {
@@ -80,13 +82,13 @@ this.idUsuario= this.route.snapshot.params['id']
    
       if (this.usuarioEdit.senha.length < 5) {
       
-        alert("A senha deve conter no minimo 5 caracteres.");
+        this.alertas.showAlertInfo("A senha deve conter no minimo 5 caracteres.");
     
       } else {
     
         if (this.usuarioEdit.senha != this.confirmarSenha) {
     
-          alert("As senhas estão diferentes.");
+          this.alertas.showAlertInfo("As senhas estão diferentes.");
           
         } else {
           
@@ -98,7 +100,7 @@ this.idUsuario= this.route.snapshot.params['id']
             
 
             this.router.navigate(["/inicio"])
-            alert("Usuário editado com sucesso! Faça seu login")
+            this.alertas.showAlertInfo("Usuário editado com sucesso! Faça seu login")
            
             environment.token=''
             environment.nome = ''

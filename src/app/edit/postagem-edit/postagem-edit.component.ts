@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
 import { Tema } from 'src/app/model/Tema';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { TemaService } from 'src/app/service/tema.service';
@@ -25,7 +26,8 @@ export class PostagemEditComponent implements OnInit {
     private route: ActivatedRoute,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    public authService: AuthService
+    public authService: AuthService,
+    private alertas: AlertasService 
 
     // private alertas: AlertasService
 
@@ -69,7 +71,7 @@ export class PostagemEditComponent implements OnInit {
 
     this.postagemService.putPostagens(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Postagem editada com sucesso')
+      this.alertas.showAlertSucess('Postagem editada com sucesso')
       this.router.navigate(['/inicio'])
     })
   }
