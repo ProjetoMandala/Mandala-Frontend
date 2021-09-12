@@ -27,7 +27,8 @@ export class InicioComponent implements OnInit {
   usuarioFK: Usuario = new Usuario()
   idUser = environment.id
 
-  foto = environment.imagem_perfil
+  imagem_perfil = environment.imagem_perfil
+  nome=environment.nome
 
 
   //ordenar postagem
