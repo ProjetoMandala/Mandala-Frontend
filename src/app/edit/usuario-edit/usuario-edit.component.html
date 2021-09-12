@@ -49,7 +49,7 @@
                         <!-- select - abre na caixa de texto, e permite escrever opções para escolha do usuário -->
                         <!-- Option - opção dentro da caixa de texto para que o usuário escolha -->
                         <select class="form-control" name="genero" id="genero" (change)='genero($event)'>
-                            <option>Selecione um gênero:</option>
+                            <option>{{usuarioEdit.genero}}</option>
                             <option value="fem">Feminino</option>
                             <option value="mas">Masculino</option>
                             <option value="outros">Outros(Trans, não-binário)</option>
@@ -61,7 +61,7 @@
                     <!-- select - abre na caixa de texto, e permite escrever opções para escolha do usuário -->
                     <!-- Option - opção dentro da caixa de texto para que o usuário escolha -->
                     <select class="form-control" name="tipo" id="tipo" (change)='tipoUsuario($event)'>
-                        <option>Selecione um tipo de usuário:</option>
+                        <option>{{usuarioEdit.tipo}}</option>
                         <option value="adm">Administrador</option>
                         <option value="padrao">Padrão</option>
                     </select>
