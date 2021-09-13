@@ -57,7 +57,6 @@ body{
   }
 
   .flip-box{
-    background-color: transparent;
     width: 250px;
     height: 320px;
     
@@ -73,7 +72,7 @@ body{
   }
   
   .flip-box:hover .flip-box-inner{
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
     
   }
   
@@ -86,13 +85,9 @@ body{
   
   }
   
-  .flip-box-front{
-    background-color: #bbb;
-  }
-  
   .flip-box-back {
     background-color: #4F3382;
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
     border-radius: 35%;
   }
 

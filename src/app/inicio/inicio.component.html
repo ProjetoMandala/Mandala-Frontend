@@ -23,6 +23,11 @@
 
 </div> -->
 <!-- align-items-center=> alinha os itens na vertical -->
+<div class="col-md-4">
+    <div class="container">
+        
+    </div>
+</div>
 <div class="col-md-8 d-flex justify-content-center mt-3">
     <div class="container">
         <div class="col-md-10">
@@ -54,6 +59,9 @@
                     </div>
                 </div>
             </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -179,8 +187,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="tema">Escolha um tema ou<a data-dismiss="modal" routerLink="/tema"
-              *ngIf='authService.adm()'>cadastre um novo</a>: </label>
+                                <label for="tema">Escolha um tema <a data-dismiss="modal" routerLink="/tema"
+              *ngIf='authService.adm()'>ou cadastre um novo</a>: </label>
                                 <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
             <option *ngFor='let temas of listaTema' value="{{temas.id}}">{{temas.titulo}}</option>
           </select>
