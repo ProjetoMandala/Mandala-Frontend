@@ -1,0 +1,170 @@
+/* body {
+  background-image: linear-gradient(
+      rgba(206, 206, 206, 0.159),
+      rgba(182, 182, 182, 0.138)
+    ),
+    url("https://i.imgur.com/86WsCbw.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+} */
+
+body {
+  background-color: #8757df;
+  background-image: url("https://i.imgur.com/AiJn5ID.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 850px;
+  background-position: top -393px left -389px;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #8757df;
+}
+
+.justificar {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.caixa {
+  /* background: linear-gradient(
+    rgba(238, 238, 238, 0.336),
+    rgba(161, 161, 161, 0.138)
+  ); */
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.roxin {
+  color: #8757df;
+  font-weight: 600;
+}
+
+input,
+select {
+  height: 50px;
+}
+
+.margin-dentro {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.campo input {
+  width: 100%;
+  font-size: 17px;
+  background: transparent;
+  color: #575757;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #575757;
+  border-radius: 0;
+  margin-bottom: 30px;
+}
+
+.campo input:focus {
+  outline: none;
+}
+
+.campo {
+  position: relative;
+}
+
+input:focus {
+  outline: 0;
+}
+
+input:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+.campo label {
+  position: absolute;
+  top: 0;
+  outline: none;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #777;
+  pointer-events: none;
+  transition: 100ms;
+}
+
+.campo input:focus ~ label,
+.campo input:valid ~ label {
+  top: -20px;
+  font-size: 12px;
+  outline: none;
+}
+
+.campo input:focus {
+  color: #404040;
+  border-bottom: 1px solid #8757df;
+}
+
+.campo input:focus ~ label {
+  color: #8757df;
+}
+
+.textoColor,
+input,
+select {
+  color: #575757;
+  background-color: transparent;
+}
+
+.label-cinza {
+  color: #777;
+  font-weight: 600;
+}
+
+.botao-roxo {
+  background-color: transparent;
+  padding: 12px 30px;
+  color: #8757df;
+  border: 2px #8757df solid;
+  font-weight: 500;
+}
+
+.botao-roxo:hover {
+  background-color: transparent;
+  color: #fff;
+  background-color: #8757df;
+}
+
+label {
+  transform: translate3d(0, 4px, 0) scale(1);
+}
+
+.row-data {
+  margin-top: -15px;
+  margin-bottom: 15px;
+}
+
+.date-input input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #575757;
+}
+
+select {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #575757;
+  border-radius: 0;
+}
+
+.preenchido ~ label {
+  top: -20px;
+  font-size: 12px;
+  outline: none;
+}
