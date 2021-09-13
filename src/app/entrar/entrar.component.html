@@ -1,0 +1,73 @@
+<div class="container-fluid bg-roxo ">
+
+    <div class="container-fluid" id='topo'>
+        <div class="row d-flex align-items-center ">
+            <div class="col-md-6 ">
+                <div class="row d-flex justify-content-center ">
+                    <div class="col-md-6 caixa cor   border border-light">
+                        <h1 class="text-center mb-3">Entrar</h1>
+                        <div class="margin-dentro">
+                            <div class="form-group campo">
+                                <input [(ngModel)]="usuarioLogin.usuario" class="form-control preencher-validate" type="email" name="usuario" id="usuario" (blur)="validatePreenchido()" required />
+                                <label for="usuario">Usuário</label>
+                            </div>
+                            <div class="form-group campo">
+                                <input [(ngModel)]="usuarioLogin.senha" class="form-control" type="password" name="senha" id="senha" required />
+                                <label for="senha">Senha</label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn botao-roxo" (click)="entrar()">
+              Entrar
+            </button>
+                        </div>
+                        <div class="divisor"></div>
+                        <p class="text-center">
+                            Não tem uma conta?
+                            <a class="text-white" href="" routerLink="/cadastrar">
+              Cadastre-se!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="img-bg"></div>
+        </div>
+    </div>
+    <div class="container-fluid ">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-md-6 mt-3">
+                    <img width="100%" height="100%" src="https://i.imgur.com/OSc8ayW.png" alt="">
+                </div>
+                <div class="col-md-6 mt-5 d-flex justify-content-center" style="flex-direction: column;">
+                    <h1 class="text-center mt-3 font-weight-bold text-white">A rede social Mandala</h1>
+                    <p class='text-white mt-3' style="font-size: large;">  Somos a Mandala, uma rede social voltada para pessoas com deficiência, voltada para
+                        informações referente a mobilidade, segurança e adequações de usuário dentro de
+                        sua cidade.
+                        Nossa rede possibilita a interação entre usuários, seja com postagens sobre seu dia
+                        a dia, como também indicações sobre locais mais bem preparados para o atender as
+                        necessidades de cada indivíduo.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-6 text-center align-self-center">
+                <div class="col align-self-end mt-5">
+                    <h1 class="sobre text-white font-family">Saiba mais sobre a Equipe Mandala</h1>
+                    <a class="btn btn-outline-light mt-2" routerLink='/sobre'>Sobre nós</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 ">
+                <img width="100%" height="100%" src="https://i.imgur.com/Kq04QHG.png" alt="">
+            </div>
+        </div>
+        <div class="row mt-2 d-flex justify-content-center">
+            <div class="subir mb-5 ">
+              <a class="text-white html" href="#topo">
+                <i class="fa fa-chevron-up" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+    </div>

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap');
+ul.social-network {
+    list-style: none;
+    padding: 0;
+}
+
+ul.social-network li {
+    display: inline;
+    margin: 0;
+    padding: 2px;
+}
+
+
+/* .fa {
+    font-size: 30pt;
+    color: white;
+}
+
+.fa-github:hover {
+    color: #d5c2f8;
+} */
+
+.corFooter {
+    background-color: #8757df;
+}
+
+h1 {
+    font-family: 'Clicker Script', cursive;
+}
+
+.bgBottom {
+    background-color: #442e6d;
+}
+
+.sobre {
+    position: inherit;
+    text-align: justify;
+    margin-left: 1rem;
+    color: white;
+}

@@ -1,0 +1,144 @@
+.caixa {
+    background-color: #8757df;
+    border-radius: 15px;
+}
+
+h1 {
+    color: #8757df;
+}
+
+.justificar {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.roxin {
+    color: #8757df;
+    font-weight: 600;
+}
+
+input,
+select {
+    height: 50px;
+}
+
+.margin-dentro {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.campo input,
+select {
+    width: 100%;
+    font-size: 17px;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ffffff;
+    border-radius: 0;
+    margin-bottom: 30px;
+}
+
+.campo input:focus {
+    outline: none;
+}
+
+.campo {
+    position: relative;
+}
+
+input:focus {
+    outline: 0;
+}
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.campo label {
+    position: absolute;
+    top: 0;
+    outline: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    pointer-events: none;
+    transition: 100ms;
+}
+
+.campo input:focus~label,
+.campo input:valid~label {
+    top: -20px;
+    font-size: 12px;
+    outline: none;
+}
+
+.campo input:focus {
+    color: #ffffff;
+    border-bottom: 1px solid #8757df;
+}
+
+.campo input:focus~label {
+    color: #8757df;
+}
+
+.textoColor,
+input,
+select {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.label-cinza {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.botao-roxo {
+    background-color: transparent;
+    padding: 12px 30px;
+    color: #8757df;
+    border: 2px #8757df solid;
+    font-weight: 500;
+}
+
+.botao-roxo:hover {
+    background-color: transparent;
+    color: #fff;
+    background-color: #8757df;
+}
+
+label {
+    transform: translate3d(0, 4px, 0) scale(1);
+}
+
+.row-data {
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.date-input input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fdfdfd;
+}
+
+select {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ffffff;
+    border-radius: 0;
+}
+
+.preenchido~label {
+    top: -20px;
+    font-size: 12px;
+    outline: none;
+}

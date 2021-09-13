@@ -1,0 +1,218 @@
+<!-- <div class="container-fluid">
+    <div class="row bg-roxo d-flex" style="align-items: flex-end;">
+        
+<div class="col-md-10" style="align-items: flex-end;">
+    <div class="row justify-content-center">
+        justify-content-center => alinha os itens na horizontal
+        <div class="col-md-6 text-white">
+            <h1 class="fs-54 text-center">Seja bem vinde!</h1>
+            <h5 class="fs-18 text-center">Use esse espaço para expor suas ideias e pensamentos!</h5>
+        </div>
+    </div>
+</div>
+<div class="col-md-10">
+    <div class="row  justify-content-center">
+        <div class="col-md-6 text-white">
+            <button class="btn btn-light mr-3 justify-content-center" data-toggle="modal" data-target="#novaPostagem">Publicar</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="col-md-4 d-flex justify-content-center mt-3">
+
+</div> -->
+<!-- align-items-center=> alinha os itens na vertical -->
+<div class="col-md-4">
+    <div class="container">
+
+    </div>
+</div>
+<div class="col-md-8 d-flex justify-content-center mt-3">
+    <div class="container">
+        <div class="col-md-10">
+            <div class="row align-items-center">
+                <div class="card border-secondary mt-3 w-100" id="bodypostagem">
+                    <div class="card-header">
+                        <p class="card-text mt-3 mb-3">
+                            <img src="{{imagem_perfil}}" alt="imagem do user" width="50px" height="50px"
+                                class="rounded-circle" />
+
+                            <button type="button" class="btn btn-outline-secondary btn-md ml-4" style="width: 80%"
+                                data-toggle="modal" data-target="#novaPostagem">
+                                Olá {{nome}}, o que há de novo?
+                            </button>
+                        </p>
+                        <hr />
+                        <div class="container-fluid d-flex justify-content-center">
+                            <label class="btn btn-default mr-5" data-toggle="modal" data-target="#novaPostagem"><img
+                                    class="iconFoto" src="https://i.imgur.com/3Vxv2W2.png"
+                                    style="width: 20px; height: 20px;" />
+                                Foto <input type="button" hidden />
+                            </label>
+                            <label class="btn btn-default mr-5" data-toggle="modal" data-target="#novaPostagem"><img
+                                    class="icon" style="width: 20px; height: 20px;"
+                                    src="https://i.imgur.com/2kGNjeH.png" />
+                                Vídeo <input type="button" hidden />
+                            </label>
+                            <!-- <label class="btn btn-default" data-toggle="modal" data-target="#novaPostagem"><img class="iconbuscar"
+                  src="https://i.imgur.com/CThG0we.png" />
+                Referências <input type="button" hidden />
+              </label> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container mb-5 mt-5" id="posts">
+    <ul class="nav nav-pills d-flex just justify-content-center mb-3 mt-0" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active primeiro" id="pills-home-tab" data-toggle="pill" href="#pills-todos" role="tab"
+                aria-controls="pills-todos" aria-selected="true">Todos os posts</a>
+        </li>
+
+        <li class="nav-item" role="presentation">
+            <a (click)='findByIdUsu()' class="nav-link segundo" id="pills-profile-tab" data-toggle="pill"
+                href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Meus posts</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link terceiro" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                aria-controls="pills-contact" aria-selected="false">Posts por tema</a>
+
+
+        </li>
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active " id="pills-todos" role="tabpanel" aria-labelledby="pills-todos-tab">
+
+            <div class=" col-md-12 d-flex justify-content-center" *ngFor='let itemPost of listaPostagens | orderBy : key : reverse
+      '>
+                <div class="card " style="width: 50rem;">
+                    <small>
+                        <p class="card-text">Por: {{itemPost.usuario.nome}}</p>
+                    </small>
+                    <img class="card-img-top w-75" src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                    <video width="320" height="240" controls>{{itemPost.video}}</video>
+                    <div class="card-body">
+                        <h5 class="card-text">{{itemPost.titulo}}</h5>
+                        <small>
+                            <p class="card-text">Tema: {{itemPost.tema.titulo}}</p>
+                        </small>
+                        <p class="card-text">{{itemPost.texto}}</p>
+                        <p class="card-text"><small class="text-muted">Publicado em: {{itemPost.data | date:
+                                'dd/MM/yyyy'}} ás
+                                {{itemPost.data | date: 'HH:mm'}} </small></p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ! minhas postagens -->
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class=" col-md-12 d-flex justify-content-center" *ngFor='let itemPost of usuarioFK.postagem | orderBy : key : reverse
+      '>
+                <div class="card " style="width: 50rem;">
+                    <!-- <small><p class="card-text">Por: {{itemPost.usuario.nome}}</p> </small> -->
+                    <img class="card-img-top w-50 " src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                    <video width="320" height="240" controls>{{itemPost.video}}</video>
+                    <div class="card-body">
+                        <h5 class="card-text">{{itemPost.titulo}}</h5>
+                        <!-- <small><p class="card-text">Tema: {{itemPost.tema.titulo}}</p> </small> -->
+                        <p class="card-text">{{itemPost.texto}}</p>
+                        <p class="card-text"><small class="text-muted">Publicado em: {{itemPost.data | date:
+                                'dd/MM/yyyy'}} ás
+                                {{itemPost.data | date: 'HH:mm'}} </small></p>
+                        <button class="btn botao mr-2 text-white"
+                            [routerLink]="['/postagem-edit', itemPost.id]">Editar</button>
+                        <button class="btn btn-danger" [routerLink]="['/postagem-delete', itemPost.id]">Apagar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+            <div class=" col-md-12 d-flex justify-content-center" *ngFor='let tema of listaTema'>
+                <div class="text-center">
+                    <h5 class="card-text">Tema: {{tema.titulo}}</h5>
+                </div>
+
+                <div class="card mt-5" style="width: 50rem;"
+                    *ngFor='let itemPost of tema.postagem | orderBy : key : reverse'>
+                    <small>
+                        <p class="card-text">Por: {{itemPost.usuario.nome}}</p>
+                    </small>
+                    <img class="card-img-top w-75" src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                    <video width="320" height="240" controls>{{itemPost.video}}</video>
+                    <div class="card-body">
+                        <h5 class="card-text">{{itemPost.titulo}}</h5>
+                        <p class="card-text">{{itemPost.texto}}</p>
+                        <p class="card-text"><small class="text-muted">Publicado em: {{itemPost.data | date:
+                                'dd/MM/yyyy'}} ás
+                                {{itemPost.data | date: 'HH:mm'}} </small></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="novaPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3 teste">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nova Postagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group campo">
+                    <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" required>
+                    <label for="titulo">Título *</label>
+                </div>
+
+                <div class="form-group campo">
+                    <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3"
+                        placeholder="Texto *"></textarea>
+                </div>
+
+                <div class="form-group campo">
+                    <input [(ngModel)]='postagem.imagem' type="text" class="form-control" id="imagem" required>
+                    <label for="imagem">Imagem</label>
+                </div>
+
+                <div class="form-group campo">
+                    <input [(ngModel)]='postagem.video' type="text" class="form-control" id="video" required>
+                    <label for="video">Vídeo</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="tema">Escolha um tema <a data-dismiss="modal" routerLink="/tema"
+                            *ngIf='authService.adm()'>ou cadastre um novo</a>: </label>
+                    <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                        <option *ngFor='let temas of listaTema' value="{{temas.id}}">{{temas.titulo}}</option>
+                    </select>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-roxo" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-outro-roxo" (click)='publicar()'>Publicar</button>
+            </div>
+        </div>
+    </div>
+</div>

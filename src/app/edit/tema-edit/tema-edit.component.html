@@ -1,0 +1,40 @@
+<div class="container-fluid ">
+
+    <div class="row justify-content-center">
+        <div class="col-md-12  p-3">
+            <h1 class="d-flex justify-content-center">Atualizar Tema</h1>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center ">
+        <div class="col-md-5 mb-5 caixa">
+
+            <div class="margin-dentro mt-4">
+
+                <div class="form-group campo">
+                    <input type="text" class="form-control" id="titulo" [(ngModel)]='temaTras.titulo'>
+                    <label for="titulo">Titulo:</label>
+                </div>
+                <div class="form-group campo">
+                    <input type="text" class="form-control" id="descricao" [(ngModel)]='temaTras.descricao'>
+                    <label for="descricao">Descrição:</label>
+                </div>
+                <div class="form-group campo">
+                    <input type="text" class="form-control" id="imagem" [(ngModel)]='temaTras.imagem'>
+                    <label for="imagem">Link da Imagem:</label>
+                </div>
+                <div class="form-group campo">
+                    <input type="text" class="form-control" id="palavraChave" [(ngModel)]='temaTras.palavraChave'>
+                    <label for="palavraChave">Palavra Chave:</label>
+                </div>
+
+            </div>
+
+            <div class="d-flex justify-content-around mb-3">
+                <button type="button" class="btn btn-danger mr-5 px-5" routerLink='/tema'>Cancelar</button>
+                <button type="button" class="btn btn-success px-5" (click)='atualizar()'>Atualizar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
