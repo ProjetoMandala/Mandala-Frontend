@@ -144,8 +144,8 @@
                         <small>
                         <p class="card-text">Por: {{itemPost.usuario.nome}}</p>
                     </small>
-                        <img class="card-img-top w-75" src="{{itemPost.imagem}}" alt="Imagem de capa do card">
-                        <video width="320" height="240" controls>{{itemPost.video}}</video>
+                        <img *ngIf="itemPost.imagem != null" class="card-img-top w-75" src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                        <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
                         <div class="card-body">
                             <h5 class="card-text">{{itemPost.titulo}}</h5>
                             <p class="card-text">{{itemPost.texto}}</p>
