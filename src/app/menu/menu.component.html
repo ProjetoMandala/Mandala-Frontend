@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-purple">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-purple">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,4 +38,124 @@
             </li>
         </ul>
     </div>
-</nav>
+</nav> -->
+
+
+<!-- Teste -->
+
+<ng-sidebar-container>
+    <ng-sidebar [opened]="opened">
+
+
+        <div class="navigation ">
+
+            <!-- fechar -->
+            <!-- <button (click)="toggleSidebar()" class="list ">            
+                <span class="icon"><i class="fa fa-times" aria-hidden="true"></i></span>             
+            </button> -->
+
+            <!-- <ul>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a>
+                        <span class="icon " (click)="toggleSidebar()"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    </a>
+                </li>
+            </ul> -->
+
+
+            <ul class=" navbar-nav mr-auto flex-column  ">
+
+                <span class=" close col-md-2" (click)="toggleSidebar()">
+                    <i class="fa fa-times" aria-hidden="true"></i>               
+                </span>
+
+                <p class="text-white pnome">Mandala</p>
+
+
+                <div class="navbar-nav mr-auto d-flex align-items-center ">
+
+                    <li class="nav-item active pl-5 mt-5">
+                        <img src="{{imagem_perfil}}" alt="Foto do usuário " width="70px" height="70px" class="img-fluid rounded-circle " />
+                    </li>
+                    <li class="nav-item pl-5 mt-3 ">
+                        <p class="m-0 font-weight-bold text-white fs-16 pUsu">{{nome}}</p>
+                    </li>
+                </div>
+
+                <!-- campos das navs -->
+                <div class="mt-5">
+                    <li class="list  ">
+                        <b></b>
+                        <b></b>
+                        <a routerLink="/inicio" (click)="toggleSidebar()">
+                            <span class="icon "><i class="fa fa-home " aria-hidden="true "></i></span>
+                            <span class="title ">Home</span>
+                        </a>
+                    </li>
+                    <li class="list ">
+                        <b></b>
+                        <b></b>
+                        <a [routerLink]="['/usuario-edit',idUsu]" (click)="toggleSidebar()">
+                            <span class="icon "><i class="fa fa-user " aria-hidden="true "></i></span>
+                            <span class="title ">Editar</span>
+                        </a>
+                    </li>
+                    <li class="list ">
+                        <b></b>
+                        <b></b>
+                        <a href="# " (click)="toggleSidebar()">
+                            <span class="icon ">
+                            <!-- <i class="fa fa-pencil-square-o " aria-hidden="true "></i> -->
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </span>
+                            <span class="title ">Temas</span>
+                        </a>
+                    </li>
+                    <li class="list ">
+                        <b></b>
+                        <b></b>
+                        <a href="/tema " (click)="toggleSidebar()">
+                            <span class="icon "><i class="fa fa-search " aria-hidden="true "></i></span>
+                            <span class="title ">Buscar</span>
+                        </a>
+                    </li>
+                    <li class="list ">
+                        <b></b>
+                        <b></b>
+                        <a (click)='sair()' (click)="toggleSidebar()">
+                            <span class="icon "><i class="fa fa-sign-out " aria-hidden="true "></i></span>
+                            <span class="title ">Sair</span>
+                        </a>
+                    </li>
+                </div>
+
+            </ul>
+
+
+        </div>
+
+
+    </ng-sidebar>
+
+    <div ng-sidebar-content>
+        <ul class="navbar-nav mr-auto mt-3 ml-3 menu ">
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a>
+                    <span class="icon " (click)="toggleSidebar()">
+                        <!-- <i class="fa fa-bars " aria-hidden="true "></i> -->
+                        <img src="{{imagem_perfil}}" alt="Foto do usuário " width="70px" height="70px" class="img-fluid rounded-circle " />
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <!-- abrir -->
+        <!-- <button (click)="toggleSidebar() ">           
+                    <span class="icon " (click)="toggleSidebar()"><i class="fa fa-bars " aria-hidden="true "></i></span>
+        </button> -->
+    </div>
+
+</ng-sidebar-container>

@@ -21,6 +21,7 @@ import { OrderModule } from 'ngx-order-pipe';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { SidebarModule } from 'ng-sidebar';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     HttpClientModule,
     FormsModule,
     OrderModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    SidebarModule.forRoot()
   ],
   providers: [{
     provide: LocationStrategy,

@@ -1,11 +1,120 @@
 .fs-16 {
-  font-size: 16pt;
+    font-size: 16pt;
 }
 
 a {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .bg-purple {
-  background-color: #8757df;
+    background-color: #8757df;
+}
+
+
+/**/
+
+.navigation .close {
+    position: relative;
+    left: 14rem;
+    margin-top: -0.7em;
+    display: block;
+    display: flex;
+    text-decoration: none;
+    display: block;
+    color: #fff;
+}
+
+.navigation .pnome {
+    position: relative;
+    margin-top: -1em;
+    left: -0.5em;
+    font-family: 'Clicker Script', cursive;
+    font-size: 2em;
+}
+
+.navigation .pUsu {
+    position: relative;
+    margin-top: -1em;
+    left: 0.89em;
+    font-size: 1.5em;
+}
+
+
+/*teste menu lateral*/
+
+ng-sidebar-container {
+    height: 100vh !important;
+    position: absolute;
+    z-index: 9;
+}
+
+::ng-deep .ng-sidebar {
+    background-color: #8757df;
+    width: 20em;
+    border-right: 2px solid rgb(67, 12, 123);
+    padding: 2em 2em;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 2.5em #8757df; */
+}
+
+
+/*editando os elementos da nav*/
+
+.navigation ul {
+    position: static;
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+    padding-left: 5px;
+    padding-top: 12px;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    /* width: 100%;*/
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation li:hover a:hover {
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    color: rgb(35, 0, 58);
+    background: #fff;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.navigation ul li.active a {
+    color: #333;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 50px;
+    height: 50px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon i {
+    font-size: 1.5em;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding-left: 8px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
 }

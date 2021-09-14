@@ -10,6 +10,15 @@ import { AuthService } from '../service/auth.service';
 })
 export class MenuComponent implements OnInit {
 
+
+
+  /*Componente Nav Bar*/
+   
+  opened = false;
+  toggleSidebar(){
+    this.opened = !this.opened;
+  }
+
   nome = environment.nome;
   imagem_perfil = environment.imagem_perfil;
   idUsu = environment.id;
