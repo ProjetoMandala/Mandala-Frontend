@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 /*Conteudo pag*/
-body{
+
+body {
     background-color: #8757df;
 }
 
-.textoSobre{
+.textoSobre {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -26,73 +27,70 @@ body{
     color: #fff;
     background-color: #8757df;
 }
-.fa-linkedin-square{
-  color: white;
+
+.fa-linkedin-square {
+    color: white;
 }
 
-.fa-github-square{
-  color: white;
+.fa-github-square {
+    color: white;
 }
 
-.fa-linkedin-square:hover{
+.fa-linkedin-square:hover {
     color: #0072b1;
 }
 
-.fa-github-square:hover{
+.fa-github-square:hover {
     color: #2D333B;
 }
 
-.voltar{
+.voltar {
     animation: is-bouncing 0.7s ease alternate infinite;
     display: grid;
     place-items: left;
     height: 30px;
-  }
+}
 
-  .fotos{
+.fotos {
     width: 250px;
     height: 320px;
-    border-radius: 35%;
+    border-radius: 30%;
     /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); */
-  }
+}
 
-  .flip-box{
+.flip-box {
     width: 250px;
     height: 320px;
-    
-  }
-  
-  .flip-box-inner{
+}
+
+.flip-box-inner {
     position: relative;
     width: 100%;
     height: 100%;
     transition: 1.5s;
     transform-style: preserve-3d;
-    
-  }
-  
-  .flip-box:hover .flip-box-inner{
+}
+
+.flip-box:hover .flip-box-inner {
     transform: rotateX(180deg);
-    
-  }
-  
-  .flip-box-front, .flip-box-back{
+}
+
+.flip-box-front,
+.flip-box-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     border-radius: 10%;
-  
-  }
-  
-  .flip-box-back {
+}
+
+.flip-box-back {
     background-color: #4F3382;
     transform: rotateX(180deg);
     border-radius: 35%;
-  }
+}
 
-  .logo{
+.logo {
     width: 200px;
     height: 75px;
-  }
-  
+}
