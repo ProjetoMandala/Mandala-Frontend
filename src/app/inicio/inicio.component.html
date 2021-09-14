@@ -84,12 +84,12 @@
         </ul>
 
         <!-- ! Todas as Postagens -->
-        <div class="tab-content d-flex justify-content-center" id="pills-tabContent">
+        <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active " id="pills-todos" role="tabpanel" aria-labelledby="pills-todos-tab">
 
-            <div class="col-md-6" *ngFor='let itemPost of listaPostagens | orderBy : key : reverse
+            <div class="col-md-12 d-flex justify-content-center" *ngFor='let itemPost of listaPostagens | orderBy : key : reverse
       '>
-                    <div class="card " style="width: 50rem;">
+                    <div class="card mb-4" style="width: 40rem; align-items: center;">
                         <small>
                         <p class="card-text">Por: {{itemPost.usuario.nome}}</p>
                     </small>
@@ -110,6 +110,7 @@
                 </div>
 
             </div>
+        </div>
 
             <!-- ! minhas postagens -->
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -157,8 +158,7 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
+            </div>        
     </div>
 
 
