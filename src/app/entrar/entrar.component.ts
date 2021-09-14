@@ -42,7 +42,7 @@ export class EntrarComponent implements OnInit {
 
     },erro => {
       if(erro.status == 401){
-        this.alertas.showAlertInfo('Usuário ou senha inválido')
+        this.alertas.showAlertDanger('Usuário ou senha inválido')
       }
     })
   }

@@ -52,7 +52,7 @@ export class TemaEditComponent implements OnInit {
       this.temaService.putTema(this.temaTras).subscribe((resp: Tema)=>{
   
           this.temaTras= resp
-          this.alertas.showAlertSucess('Tema atualizado com sucesso😁')
+          this.alertas.showAlertSuccess('Tema atualizado com sucesso😁')
           this.router.navigate(['/tema'])
       
       })
