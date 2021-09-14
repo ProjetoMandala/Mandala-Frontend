@@ -23,15 +23,14 @@
 
 </div> -->
 <!-- align-items-center=> alinha os itens na vertical -->
-<div class="col-md-4">
-    <div class="container">
 
-    </div>
-</div>
-<div class="col-md-8 d-flex justify-content-center mt-3">
-    <div class="container">
-        <div class="col-md-10">
-            <div class="row align-items-center">
+<div class="container">
+    <div class="col-md-10 d-flex justify-content-center">
+
+
+    <div class="col-md-10 align-items-center mt-3">
+        <div class="container">
+            <div class="row">
                 <div class="card border-secondary mt-3 w-100" id="bodypostagem">
                     <div class="card-header">
                         <p class="card-text mt-3 mb-3">
@@ -87,11 +86,12 @@
 
         </li>
     </ul>
-
-    <div class="tab-content" id="pills-tabContent">
+    
+    <!-- ! Todas as Postagens -->
+    <div class="tab-content d-flex justify-content-center" id="pills-tabContent">
         <div class="tab-pane fade show active " id="pills-todos" role="tabpanel" aria-labelledby="pills-todos-tab">
 
-            <div class=" col-md-12 d-flex justify-content-center" *ngFor='let itemPost of listaPostagens | orderBy : key : reverse
+            <div class="col-md-8" *ngFor='let itemPost of listaPostagens | orderBy : key : reverse
       '>
                 <div class="card " style="width: 50rem;">
                     <small>
@@ -138,6 +138,7 @@
             </div>
         </div>
 
+        <!-- ! Postagens por Tema -->
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 
             <div class=" col-md-12 d-flex justify-content-center" *ngFor='let tema of listaTema'>
@@ -209,10 +210,11 @@
                 </div>
 
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer justify-content-center">
                 <button type="button" class="btn btn-roxo" data-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-outro-roxo" (click)='publicar()'>Publicar</button>
             </div>
         </div>
     </div>
+</div>
 </div>
