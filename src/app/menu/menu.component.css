@@ -46,6 +46,7 @@ ng-sidebar-container {
     height: 100vh !important;
     position: absolute;
     z-index: 9;
+    width: 25%;
 }
 
 ::ng-deep .ng-sidebar {
