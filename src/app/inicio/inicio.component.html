@@ -25,11 +25,11 @@
 <!-- align-items-center=> alinha os itens na vertical -->
 
 <div class="container">
-    <div class="col-md-10 d-flex justify-content-center">
+    <div class="col-md-12 d-flex justify-content-center">
 
 
-    <div class="col-md-10 align-items-center mt-3">
-        <div class="container">
+    
+        <div class="col-md-8">
             <div class="row">
                 <div class="card border-secondary mt-3 w-100" id="bodypostagem">
                     <div class="card-header">
@@ -62,8 +62,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div>      
+    
 </div>
 
 
@@ -91,7 +91,7 @@
     <div class="tab-content d-flex justify-content-center" id="pills-tabContent">
         <div class="tab-pane fade show active " id="pills-todos" role="tabpanel" aria-labelledby="pills-todos-tab">
 
-            <div class="col-md-8" *ngFor='let itemPost of listaPostagens | orderBy : key : reverse
+            <div class="col-md-6" *ngFor='let itemPost of listaPostagens | orderBy : key : reverse
       '>
                 <div class="card " style="width: 50rem;">
                     <small>
