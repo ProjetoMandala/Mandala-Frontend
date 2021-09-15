@@ -58,6 +58,7 @@ export class CadastrarComponent implements OnInit {
 
     this.usuarioCad.tipo = this.tipoUsuario
 
+
     if (this.usuarioCad.senha != this.confirmeSenha) {
 
       this.alertas.showAlertDanger("As senhas estão diferentes.");

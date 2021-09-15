@@ -5,47 +5,80 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostagemService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  //variavel token
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token),
+  };
 
-    //variavel token
-token = {
-  headers: new HttpHeaders().set('Authorization', environment.token)
-}
+  //metodo de cadastrar o postagens
+  postPostagem(postagensCadastro: Postagem): Observable<Postagem> {
+    return this.http.post<Postagem>(
+      'https://projetomandala.herokuapp.com/postagem',
+      postagensCadastro,
+      this.token
+    );
+  }
 
+  //trazer todos os postagens
+  getAllPostagens(): Observable<Postagem[]> {
+    return this.http.get<Postagem[]>(
+      'https://projetomandala.herokuapp.com/postagem',
+      this.token
+    );
+  }
 
-//metodo de cadastrar o postagens
-postPostagem(postagensCadastro: Postagem): Observable<Postagem>{
-  return this.http.post<Postagem>('https://projetomandala.herokuapp.com/postagem', postagensCadastro, this.token)
-}
+  //campo com o conteudo a ser editado
+  getByIdPostagens(id: number): Observable<Postagem> {
+    return this.http.get<Postagem>(
+      `https://projetomandala.herokuapp.com/postagem/${id}`,
+      this.token
+    );
+  }
 
-//trazer todos os postagens
-getAllPostagens(): Observable<Postagem[]>{
-  return this.http.get<Postagem[]>('https://projetomandala.herokuapp.com/postagem', this.token)  
-}
+  //buscar por titulo
+  getByIdTituloPostagem(titulo: string): Observable<Postagem[]> {
+    return this.http.get<Postagem[]>(
+      `https://projetomandala.herokuapp.com/postagem/titulo/${titulo}`,
+      this.token
+    );
+  }
 
-//campo com o conteudo a ser editado
-getByIdPostagens(id: number): Observable<Postagem>{
-  return this.http.get<Postagem>(`https://projetomandala.herokuapp.com/postagem/${id}`, this.token)
-}
+  //metodo alterar postagens
+  putPostagens(postagensEdit: Postagem): Observable<Postagem> {
+    return this.http.put<Postagem>(
+      'https://projetomandala.herokuapp.com/postagem',
+      postagensEdit,
+      this.token
+    );
+  }
 
-//buscar por titulo
-getByIdTituloPostagem(titulo: string): Observable<Postagem[]>{
-  return this.http.get<Postagem[]>(`https://projetomandala.herokuapp.com/postagem/titulo/${titulo}`, this.token)
-}
+  //metodo alterar delete postagens
+  deletePostagens(id: number) {
+    return this.http.delete(
+      `https://projetomandala.herokuapp.com/postagem/${id}`,
+      this.token
+    );
+  }
 
-//metodo alterar postagens
-putPostagens(postagensEdit: Postagem): Observable<Postagem>{
-  return this.http.put<Postagem>('https://projetomandala.herokuapp.com/postagem', postagensEdit, this.token)
-}
+  //Método de curtir postagem
+  putCurtir(id: number): Observable<Postagem> {
+    return this.http.put<Postagem>(
+      `https://projetomandala.herokuapp.com/postagem/curtir/${id}`,
+      this.token
+    );
+  }
 
-//metodo alterar delete postagens
-deletePostagens(id: number){
-  return this.http.delete(`https://projetomandala.herokuapp.com/postagem/${id}`, this.token)
-}
-
+   //Método de descurtir postagem
+   putDescurtir(id: number): Observable<Postagem> {
+    return this.http.put<Postagem>(
+      `https://projetomandala.herokuapp.com/postagem/descurtir/${id}`,
+      this.token
+    );
+  }
 
 }

@@ -18,6 +18,7 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+  
 
   //estrangeiras
   temaFK: Tema = new Tema()
@@ -56,7 +57,7 @@ export class InicioComponent implements OnInit {
       // this.alertas.showAlertInfo('Sua seção expirou, faça o login novamente');
       this.router.navigate(['/entrar']);
     }
-//forçando altenticação
+//forçando autenticação
     this.authService.refreshToken()
 
      //trazer todos os temas
@@ -143,6 +144,25 @@ findByTituloPostagem(){
 
   }
 }
+
+findPostagemById(id: number) {
+  this.postagemService.getByIdPostagens(id).subscribe((resp: Postagem) => {
+    this.postagem = resp
+  })
+}
+
+
+curtida(id: number){
+  this.postagemService.putCurtir(id).subscribe(()=>{
+  this.getAllPostagens()
+})
+}
+
+descurtida(id: number){
+    this.postagemService.putDescurtir(id).subscribe(()=>{
+    this.getAllPostagens()
+  })
+  }
 
 
 
