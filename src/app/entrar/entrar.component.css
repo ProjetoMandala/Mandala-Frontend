@@ -1,10 +1,10 @@
-#img-bg {
+/* #img-bg {
     background-image: url("https://i.imgur.com/JFky5r7.png");
     min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 
 h1 {
     margin-top: 15px;
@@ -166,8 +166,9 @@ label {
     background: rgb(81, 50, 139);
     background: linear-gradient( 0deg, rgba(81, 50, 139, 1) 0%, rgba(165, 115, 255, 1) 30%, rgba(169, 122, 255, 1) 52%, rgba(167, 120, 255, 1) 73%, rgba(81, 50, 139, 1) 100%);
 }
-.subir{
+
+.subir {
     animation: is-bouncing1 0.7s ease alternate infinite;
     display: grid;
     height: 30px;
-  }
+}

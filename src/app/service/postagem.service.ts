@@ -13,7 +13,10 @@ export class PostagemService {
   //variavel token
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token),
+    //forçando autenticação
+
   };
+ 
 
   //metodo de cadastrar o postagens
   postPostagem(postagensCadastro: Postagem): Observable<Postagem> {
@@ -21,6 +24,8 @@ export class PostagemService {
       'https://projetomandala.herokuapp.com/postagem',
       postagensCadastro,
       this.token
+
+
     );
   }
 
