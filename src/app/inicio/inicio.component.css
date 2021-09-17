@@ -125,3 +125,10 @@ input:focus {
 .botao {
     background-color: #442E6D;
 }
+
+.img_postagem{
+    max-width: 600px;
+    max-height: 750px;
+    width: auto;
+    height: auto;
+}
