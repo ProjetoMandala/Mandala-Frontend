@@ -61,11 +61,16 @@
                 <label class="label-cinza" for="tipo">Tipo de Usuário</label>
                 <!-- select - abre na caixa de texto, e permite escrever opções para escolha do usuário -->
                 <!-- Option - opção dentro da caixa de texto para que o usuário escolha -->
-                <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
+                <select class="form-control mb-3" name="tipo" id="tipo" (change)='tipoUser($event)'>
                   <option>Selecione um tipo de usuário:</option>
-                  <option value="Administrador">Administrador</option>
-                  <option value="Padrão">Padrão</option>
+                  <option value="adm">Administrador</option>
+                  <option value="padrao">Padrão</option>
                 </select>
+                <div>
+                  <p align="justify" class="botao-roxo">
+                  *Ao se cadastrar, você aceita nossos Termos de Uso e se compromete a agir de forma respeitosa com os demais usuários da rede. 
+                  </p>
+                </div>
               </div>
             </div>
 
