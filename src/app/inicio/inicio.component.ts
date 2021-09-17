@@ -156,8 +156,6 @@ curtida(id: number){
   this.postagemService.putCurtir(id).subscribe(()=>{
 
   this.getAllPostagens()
-
-  console.log(this.getAllPostagens)
 })
 }
 

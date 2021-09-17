@@ -12,10 +12,15 @@ export class PostagemService {
 
   //variavel token
   token = {
-    headers: new HttpHeaders().set('Authorization', environment.token),
+    headers: new HttpHeaders().set('Authorization', environment.token)
     //forçando autenticação
 
-  };
+  }
+  refreshToken() {
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token)
+    };
+  }
  
 
   //metodo de cadastrar o postagens

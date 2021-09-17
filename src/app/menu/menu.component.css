@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap');
 .fs-16 {
     font-size: 16pt;
 }
@@ -8,10 +9,32 @@ a {
 
 .bg-purple {
     background-color: #8757df;
+    z-index: 1;
+    height: 4rem;
 }
 
 
 /**/
+
+
+/*teste menu lateral*/
+
+ng-sidebar-container {
+    height: 70vh !important;
+    position: absolute;
+    z-index: 9;
+    width: 20%;
+    top: -1.2rem;
+    border-radius: 0px 10px 20px 0px;
+}
+
+::ng-deep .ng-sidebar {
+    background-color: #8757df;
+    width: 20em;
+    padding: 2em 2em;
+    border-right: 2px solid rgb(34, 10, 58);
+    /* box-shadow: 0 0 2.5em #8757df; */
+}
 
 @media(max-width:120%) {
     ng-sidebar-container {
@@ -22,49 +45,53 @@ a {
     }
 }
 
+
+/*demais elementos*/
+
+.sair {
+    position: relative;
+    margin-left: 90%;
+}
+
+@media(max-width: 480px) {
+    .sair {
+        display: block;
+        margin-left: auto;
+    }
+}
+
+
+/**/
+
 .navigation .close {
     position: relative;
-    left: 14rem;
-    margin-top: -0.7em;
+    left: 9rem;
+    margin-top: -0.4em;
     display: block;
-    display: flex;
     text-decoration: none;
-    display: block;
     color: #fff;
+    z-index: 9;
 }
 
 .navigation .pnome {
     position: relative;
     margin-top: -1em;
-    left: -0.5em;
+    left: -0em;
     font-family: 'Clicker Script', cursive;
-    font-size: 2em;
+    font-size: 1.5em;
+}
+
+.navigation .perfil {
+    position: relative;
+    left: 3rem;
 }
 
 .navigation .pUsu {
     position: relative;
-    margin-top: -1em;
-    left: 0.89em;
-    font-size: 1.5em;
-}
-
-
-/*teste menu lateral*/
-
-ng-sidebar-container {
-    height: 100vh !important;
-    position: absolute;
-    z-index: 9;
-    width: 25%;
-}
-
-::ng-deep .ng-sidebar {
-    background-color: #8757df;
-    width: 20em;
-    border-right: 2px solid rgb(67, 12, 123);
-    padding: 2em 2em;
-    border-radius: 10px;
-    /* box-shadow: 0 0 2.5em #8757df; */
+    top: 3rem;
+    font-size: 1em;
+    left: -0.5rem;
+    display: block;
 }
 
 
@@ -127,4 +154,58 @@ ng-sidebar-container {
     height: 60px;
     line-height: 60px;
     white-space: normal;
+}
+
+
+/* tentando responsivo*/
+
+@media(max-width: 480px) {
+    .navigation {
+        position: relative;
+        display: block;
+        margin-left: 0.1rem;
+        /* width: 16%; */
+        font-size: 0.98rem;
+    }
+    .navigation .close i {
+        position: relative;
+        display: block;
+        margin-left: -9.5rem;
+        margin-top: -0.5em;
+        margin-bottom: 1rem;
+    }
+    .navigation .pnome {
+        position: relative;
+        display: block;
+        margin-left: -2rem;
+        top: 1rem;
+        font-size: 1.2rem;
+    }
+    .navigation .pUsu {
+        position: relative;
+        display: block;
+        top: 4rem;
+        text-align: center;
+        left: -5.40rem;
+        width: 50%;
+    }
+    .navigation .perfil {
+        position: relative;
+        display: block;
+        left: -1.90rem;
+        top: 1rem;
+    }
+    .navigation li a {
+        top: 2rem;
+        position: relative;
+        display: block;
+        margin-left: -2.9rem;
+        font-size: 0.90rem;
+        width: 0.5%;
+    }
+    .navigation .title {
+        position: relative;
+        margin-left: -1rem;
+        display: block;
+    }
 }

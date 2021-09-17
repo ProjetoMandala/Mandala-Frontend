@@ -1,46 +1,3 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-purple">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto d-flex align-items-center">
-            <li class="nav-item active">
-                <img src="{{imagem_perfil}}" alt="Foto do usuário" width="50px" height="50px" class="img-fluid rounded-circle" />
-            </li>
-            <li class="nav-item pl-3">
-                <p class="m-0 font-weight-bold text-white fs-16">Olá, {{nome}}</p>
-            </li>
-
-
-            <li class="nav-item pl-3">
-                <a [routerLink]="['/usuario-edit',idUsu]">
-                    <p class="text-white fs-16 m-0">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    </p>
-                </a>
-            </li>
-
-            <li class="nav-item pl-3">
-                <a routerLink="/inicio" class=" text-left">
-                    <p class="text-white fs-16 m-0">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                    </p>
-                </a>
-            </li>
-        </ul>
-
-        <ul class="navbar-nav ml-auto d-flex align-items-center">
-            <li class="nav-item pl-3">
-                <a class="m-0 font-weight-bold text-white fs-16" (click)='sair()'>Sair
-          <i class="fa fa-sign-out text-white fs-16" aria-hidden="true"></i
-        ></a>
-            </li>
-        </ul>
-    </div>
-</nav> -->
-
-
 <!-- Teste -->
 
 <ng-sidebar-container>
@@ -57,12 +14,14 @@
                 <p class="text-white pnome">Mandala</p>
 
 
-                <div class="navbar-nav mr-auto d-flex align-items-center ">
+                <div class=" d-flex align-items-center ">
 
-                    <li class="nav-item active pl-5 mt-5">
-                        <img src="{{imagem_perfil}}" alt="Foto do usuário " width="70px" height="70px" class="img-fluid rounded-circle " />
+                    <li class="nav-item active ">
+                        <img src="{{imagem_perfil}}" alt="Foto do usuário " width="70px" height="70px" class="img-fluid rounded-circle perfil" />
+                        <!-- <img src=" https://i.imgur.com/TqmVCQD.png" alt="Foto do usuário " width="70px" height="70px" class="img-fluid rounded-circle perfil" /> -->
+
                     </li>
-                    <li class="nav-item pl-5 mt-3 ">
+                    <li class="nav-item  ">
                         <p class="m-0 font-weight-bold text-white fs-16 pUsu">{{nome}}</p>
                     </li>
                 </div>
@@ -104,14 +63,7 @@
                             <span class="title ">Buscar</span>
                         </a>
                     </li>
-                    <li class="list ">
-                        <b></b>
-                        <b></b>
-                        <a (click)='sair()' (click)="toggleSidebar()">
-                            <span class="icon "><i class="fa fa-sign-out " aria-hidden="true "></i></span>
-                            <span class="title ">Sair</span>
-                        </a>
-                    </li>
+
                 </div>
 
             </ul>
@@ -142,3 +94,20 @@
     </div>
 
 </ng-sidebar-container>
+<nav class="navbar navbar-expand-lg navbar-light bg-purple">
+
+
+
+    <div class="sair">
+
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+            <li class="nav-item ">
+                <a class="m-0 font-weight-bold text-white fs-16" (click)='sair()'>
+                    <i class="fa fa-sign-out text-white fs-16" aria-hidden="true"> </i> Sair
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+</nav>
