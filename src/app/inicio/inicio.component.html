@@ -26,9 +26,6 @@
 
 <div class="container">
     <div class="col-md-12 d-flex justify-content-center">
-
-
-
         <div class="col-md-8">
             <div class="row">
                 <div class="card border-secondary mt-3 w-100" id="bodypostagem">
@@ -89,7 +86,7 @@
     </ul>
 
     <!-- ! Todas as Postagens -->
-    <div class="tab-content" id="pills-tabContent">
+    <!-- <div class="tab-content mt-3" id="nav-tabContent">
         <div class="tab-pane fade show active " id="pills-todos" role="tabpanel" aria-labelledby="pills-todos-tab">
 
             <div class="col-md-12 d-flex justify-content-center"
@@ -100,7 +97,8 @@
                                 <img src="{{imagem_perfil}}" alt="imagem do user" width="50px" height="50px"
                                     class="rounded-circle mr-3 ml-3" />
                                 <h6 class="card-text mt-2">{{itemPost.usuario.nome}}</h6>                                                                
-                            </div>     
+                            </div>  
+                               
                             <small>
                                 <p class="ml-5">Tema: #{{itemPost.tema.titulo}}</p>
                             </small>                     
@@ -113,15 +111,78 @@
                     <div class="card-body">
                         <h5 class="card-text">{{itemPost.titulo}}</h5>
                         <p class="card-text">{{itemPost.texto}}</p>
-                        <p class="card-text"><small class="text-muted">Publicado em: {{itemPost.data |
-                                date:'dd/MM/yyyy'}} ás
-                                {{itemPost.data | date: 'HH:mm'}} </small></p>
-
                     </div>
                 </div>
             </div>
 
-        </div>
+        </div> 
+        </div> -->
+
+
+        <div class="tab-content mt-3" id="nav-tabContent">
+            <!-- Todas as Postagens -->
+            <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
+              aria-labelledby="nav-todasPostagens-tab">
+              <div class="col-md-12 d-flex justify-content-center">
+              <div class="row align-items-center">
+                <div class="card border-secondary mt-3 mb-3 w-100 bodypost"
+                *ngFor='let itemPost of listaPostagens | orderBy : key : reverse'>
+                  <div class="card-header color-header border-secondary">
+                    <div class=" d-flex justify-content-between align-items-center">
+                      <div class="d-flex justify-content-between align-items-center ">
+                        <div class="mr-2">
+                          <img class="rounded-circle" src="{{imagem_perfil}}"  alt="Imagem do Usuário" width="50px"
+                            height="50px" class="rounded-circle">
+                        </div>
+                        <div class="ml-2 mt-2">
+                          <div class="h5 m-0 postfonth">{{itemPost.usuario.nome}}</div>
+                          <div class="h7 text-muted ">
+                            <p class="text-muted">{{itemPost.data| date:'dd/MM/yyyy'}} às {{itemPost.data| date: 'HH:mm'}} <i
+                                class="fa fa-clock-o" aria-hidden="true"></i></p>
+                            </div>
+                        </div>
+  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center mt-3 mb-3">
+                    <h5>Tema:
+                      <span class="text-muted">{{itemPost.tema.titulo}} </span> 
+                    </h5>
+                  </div>
+                    <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto img_postagem" width="70%"
+                    src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
+                <div class="card-body">
+                    <h5 class="card-text">{{itemPost.titulo}}</h5>
+                    <p class="card-text">{{itemPost.texto}}</p>
+                </div>
+                </div>
+               
+             
+
+  
+                    <!-- <img *ngIf="!(i.imagem == null || i.imagem =='')" src="{{ i.imagem }}" width="100%" height="100%" alt="" /> -->
+<!--   
+                    <div *ngIf="!(i.videoSeguro.changingThisBreaksApplicationSecurity == null ||i.videoSeguro.changingThisBreaksApplicationSecurity == '')" class="container">
+                      <div class="row config-video">
+                        <iframe width="560" height="315" [src]="i.videoSeguro" title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen></iframe>
+                      </div>
+                    </div> -->
+  
+                    <!-- <div *ngIf="i.referencia != null">
+                      <p class="card-text mt-3 mb-0 ">Referências: </p> <a href="{{ i.referencia }}" target="_blank">{{i.referencia }}</a>
+                    </div> -->
+
+  
+                </div>
+              </div>
+            </div>
+            </div>
+
 
 
         <!-- ! minhas postagens -->
@@ -177,7 +238,7 @@
 
         </div>
     </div>
-</div>
+
 
 
 <!-- Modal -->
