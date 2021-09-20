@@ -126,9 +126,14 @@ input:focus {
     background-color: #442E6D;
 }
 
-.img_postagem{
+/* .img_postagem{
     max-width: 600px;
-    max-height: 750px;
-    width: auto;
-    height: auto;
+    max-height: 700px;
+    object-fit: fill;
+} */
+
+.postagem-size{
+    
+    max-width: 605px;
+    max-height: 755px;       
 }
