@@ -125,10 +125,27 @@ input:focus {
 .botao {
     background-color: #442E6D;
 }
+.tm-img1 {
+    width: 25%;
+    height: 25%;
+  }
 
-.img_postagem{
-    max-width: 600px;
-    max-height: 750px;
-    width: auto;
-    height: auto;
-}
+.bodypost {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .color-header {
+    background-color: rgba(241, 241, 241, 0.952);
+  }
+
+  .mtema {
+    text-align: right;
+    font-size: smaller;
+    font-weight: bold;
+    color: #161616;
+    margin-top: 15px;
+  }
