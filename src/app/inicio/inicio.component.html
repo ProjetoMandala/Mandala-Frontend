@@ -93,21 +93,16 @@
                         <span class="text-muted">{{itemPost.tema.titulo}} </span>
                       </h5>
                     </div>
+
                   </div>
                 </div>
 
                 <div class="card-body text-center">
                   <h5 class="card-title ">{{ itemPost.titulo }}</h5>
                   <p class="card-text mt-3">{{ itemPost.texto}}</p>
-
                   <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto tm-img1 " src="{{itemPost.imagem}}"
                     alt="Imagem de capa do card">
                   <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
-                  <div class="row config-video">
-                    <iframe width="560" height="315" [src]="itemPost.video" title="YouTube video player" frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-                  </div>
                 </div>
               </div>
             </div>
@@ -147,11 +142,7 @@
                   <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto tm-img1 " src="{{itemPost.imagem}}"
                     alt="Imagem de capa do card">
                   <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
-                  <!-- <div class="row config-video">
-                                <iframe width="560" height="315" [src]="itemPost.video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div> -->
-
-
+              
                 </div>
                 <div class="d-flex justify-content-center mb-3">
                   <button class="btn botao mr-4 text-white"
@@ -200,11 +191,6 @@
                   <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto tm-img1 " src="{{itemPost.imagem}}"
                     alt="Imagem de capa do card">
                   <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
-                  <div class="row config-video">
-                    <iframe width="560" height="315" [src]="itemPost.video" title="YouTube video player" frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-                  </div>
                 </div>
               </div>
             </div>
