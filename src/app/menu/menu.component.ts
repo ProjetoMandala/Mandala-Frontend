@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Postagem } from '../model/Postagem';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -22,6 +23,11 @@ export class MenuComponent implements OnInit {
   nome = environment.nome;
   imagem_perfil = environment.imagem_perfil;
   idUsu = environment.id;
+  //busca por titulo
+  postagem: Postagem = new Postagem()
+  listaPostagens: Postagem[]
+  tituloPost: string
+
 
   constructor(
     private router: Router, 
@@ -36,17 +42,28 @@ export class MenuComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     this.authService.refreshToken()
+    
   }
 
-  sair() {
+
+  
+
+
+
+sair() {
     
-    environment.token='';
-    environment.nome = '';
-    environment.imagem_perfil = '';  
-    environment.tipo='';
-    environment.id = 0 ;  
-     
-    this.router.navigate(['/entrar'])
-  }
+  environment.token='';
+  environment.nome = '';
+  environment.imagem_perfil = '';  
+  environment.tipo='';
+  environment.id = 0 ;  
+   
+  this.router.navigate(['/entrar'])
+}
+
+
+
+
+
 
 }

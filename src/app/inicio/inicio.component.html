@@ -31,11 +31,9 @@
                 <div class="card border-secondary mt-3 w-100" id="bodypostagem">
                     <div class="card-header">
                         <p class="card-text mt-3 mb-3">
-                            <img src="{{imagem_perfil}}" alt="imagem do user" width="50px" height="50px"
-                                class="rounded-circle" />
+                            <img src="{{imagem_perfil}}" alt="imagem do user" width="50px" height="50px" class="rounded-circle" />
 
-                            <button type="button" class="btn btn-outline-secondary btn-md ml-4" style="width: 80%"
-                                data-toggle="modal" data-target="#novaPostagem">
+                            <button type="button" class="btn btn-outline-secondary btn-md ml-4" style="width: 80%" data-toggle="modal" data-target="#novaPostagem">
                                 Olá {{nome}}, o que há de novo?
                             </button>
                         </p>
@@ -67,7 +65,7 @@
 <div class=" row d-flex justify-content-center  mt-5 mb-5">
     <div class="col-md-4">
         <div class="form-group campoPesquisa">
-            <input type="text" class="form-control bg-light" id="titulo" placeholder="Digite um titulo de pesquisa" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
+            <input type="text" class="form-control bg-light" id="titulo" placeholder="🔍 buscar postagens." [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
         </div>
     </div>
 </div>
@@ -77,17 +75,14 @@
 <div class="container mb-5 mt-5" id="posts">
     <ul class="nav nav-pills d-flex just justify-content-center mb-5 mt-0" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-            <a class="nav-link active primeiro" id="pills-home-tab" data-toggle="pill" href="#pills-todos" role="tab"
-                aria-controls="pills-todos" aria-selected="true">Todos os posts</a>
+            <a class="nav-link active primeiro" id="pills-home-tab" data-toggle="pill" href="#pills-todos" role="tab" aria-controls="pills-todos" aria-selected="true">Todos os posts</a>
         </li>
 
         <li class="nav-item" role="presentation">
-            <a (click)='findByIdUsu()' class="nav-link segundo" id="pills-profile-tab" data-toggle="pill"
-                href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Meus posts</a>
+            <a (click)='findByIdUsu()' class="nav-link segundo" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Meus posts</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link terceiro" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
-                aria-controls="pills-contact" aria-selected="false">Posts por tema</a>
+            <a class="nav-link terceiro" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Posts por tema</a>
 
 
         </li>
@@ -127,49 +122,46 @@
         </div> -->
 
 
-        <div class="tab-content mt-3" id="nav-tabContent">
-            <!-- Todas as Postagens -->
-            <div class="tab-pane fade show active ali" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
-              <div class="col-md-12 d-flex justify-content-center">
-              <div class="row align-items-center">
-                <div class="card border-secondary mt-3 mb-3 w-100 bodypost postagem-size" *ngFor='let itemPost of listaPostagens | orderBy : key : reverse'>
-                  <div class="card-header color-header border-secondary">
-                    <div class=" d-flex justify-content-between align-items-center">
-                      <div class="d-flex justify-content-between align-items-center ">
-                        <div class="mr-2">
-                          <img class="rounded-circle" src="{{imagem_perfil}}"  alt="Imagem do Usuário" width="50px"
-                            height="50px" class="rounded-circle">
-                        </div>
-                        <div class="ml-2 mt-2">
-                          <div class="h5 m-0 postfonth">{{itemPost.usuario.nome}}</div>
-                          <div class="h7 text-muted ">
-                            <p class="text-muted">{{itemPost.data| date:'dd/MM/yyyy'}} às {{itemPost.data| date: 'HH:mm'}} <i
-                                class="fa fa-clock-o" aria-hidden="true"></i></p>
+    <div class="tab-content mt-3" id="nav-tabContent">
+        <!-- Todas as Postagens -->
+        <div class="tab-pane fade show active ali" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="row align-items-center">
+                    <div class="card border-secondary mt-3 mb-3 w-100 bodypost postagem-size" *ngFor='let itemPost of listaPostagens | orderBy : key : reverse'>
+                        <div class="card-header color-header border-secondary">
+                            <div class=" d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <div class="mr-2">
+                                        <img class="rounded-circle" src="{{imagem_perfil}}" alt="Imagem do Usuário" width="50px" height="50px" class="rounded-circle">
+                                    </div>
+                                    <div class="ml-2 mt-2">
+                                        <div class="h5 m-0 postfonth">{{itemPost.usuario.nome}}</div>
+                                        <div class="h7 text-muted ">
+                                            <p class="text-muted">{{itemPost.data| date:'dd/MM/yyyy'}} às {{itemPost.data| date: 'HH:mm'}} <i class="fa fa-clock-o" aria-hidden="true"></i></p>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
-  
-                      </div>
+                        <div class="d-flex justify-content-center mt-3 mb-3">
+                            <h5>Tema:
+                                <span class="text-muted">{{itemPost.tema.titulo}} </span>
+                            </h5>
+                        </div>
+                        <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto img_postagem" src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                        <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
+                        <div class="card-body">
+                            <h5 class="card-text">{{itemPost.titulo}}</h5>
+                            <p class="card-text">{{itemPost.texto}}</p>
+                        </div>
                     </div>
-                  </div>
-                  <div class="d-flex justify-content-center mt-3 mb-3">
-                    <h5>Tema:
-                      <span class="text-muted">{{itemPost.tema.titulo}} </span> 
-                    </h5>
-                  </div>
-                    <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto img_postagem"
-                    src="{{itemPost.imagem}}" alt="Imagem de capa do card">
-                <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
-                <div class="card-body">
-                    <h5 class="card-text">{{itemPost.titulo}}</h5>
-                    <p class="card-text">{{itemPost.texto}}</p>
-                </div>
-                </div>
-               
-             
 
-  
+
+
+
                     <!-- <img *ngIf="!(i.imagem == null || i.imagem =='')" src="{{ i.imagem }}" width="100%" height="100%" alt="" /> -->
-<!--   
+                    <!--   
                     <div *ngIf="!(i.videoSeguro.changingThisBreaksApplicationSecurity == null ||i.videoSeguro.changingThisBreaksApplicationSecurity == '')" class="container">
                       <div class="row config-video">
                         <iframe width="560" height="315" [src]="i.videoSeguro" title="YouTube video player"
@@ -178,71 +170,66 @@
                           allowfullscreen></iframe>
                       </div>
                     </div> -->
-  
+
                     <!-- <div *ngIf="i.referencia != null">
                       <p class="card-text mt-3 mb-0 ">Referências: </p> <a href="{{ i.referencia }}" target="_blank">{{i.referencia }}</a>
                     </div> -->
 
-  
-                </div>
-              </div>
-            </div>
-            </div>
 
-
-
-        <!-- ! minhas postagens -->
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <div class=" col-md-12 d-flex justify-content-center"
-                *ngFor='let itemPost of usuarioFK.postagem | orderBy : key : reverse'>
-                <div class="card " style="width: 40rem;">
-                    <!-- <small><p class="card-text">Por: {{itemPost.usuario.nome}}</p> </small> -->
-                    <img *ngIf="itemPost.imagem != null" class="card-img-top w-50 " src="{{itemPost.imagem}}"
-                        alt="Imagem de capa do card">
-                    <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
-                    <div class="card-body">
-                        <h5 class="card-text">{{itemPost.titulo}}</h5>
-                        <!-- <small><p class="card-text">Tema: {{itemPost.tema.titulo}}</p> </small> -->
-                        <p class="card-text">{{itemPost.texto}}</p>
-                        <p class="card-text"><small class="text-muted">Publicado em: {{itemPost.data | date:
-                                'dd/MM/yyyy'}} ás {{itemPost.data | date: 'HH:mm'}} </small></p>
-                        <button class="btn botao mr-2 text-white"
-                            [routerLink]="['/postagem-edit', itemPost.id]">Editar</button>
-                        <button class="btn btn-danger" [routerLink]="['/postagem-delete', itemPost.id]">Apagar</button>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- ! Postagens por Tema -->
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 
-            <div class=" col-md-12 d-flex justify-content-center" *ngFor='let tema of listaTema'>
-                <h5 class="card-text">Tema: {{tema.titulo}}</h5>
-                <!-- <div class="card">
+
+    <!-- ! minhas postagens -->
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <div class=" col-md-12 d-flex justify-content-center" *ngFor='let itemPost of usuarioFK.postagem | orderBy : key : reverse'>
+            <div class="card " style="width: 40rem;">
+                <!-- <small><p class="card-text">Por: {{itemPost.usuario.nome}}</p> </small> -->
+                <img *ngIf="itemPost.imagem != null" class="card-img-top w-50 " src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
+                <div class="card-body">
+                    <h5 class="card-text">{{itemPost.titulo}}</h5>
+                    <!-- <small><p class="card-text">Tema: {{itemPost.tema.titulo}}</p> </small> -->
+                    <p class="card-text">{{itemPost.texto}}</p>
+                    <p class="card-text"><small class="text-muted">Publicado em: {{itemPost.data | date:
+                                'dd/MM/yyyy'}} ás {{itemPost.data | date: 'HH:mm'}} </small></p>
+                    <button class="btn botao mr-2 text-white" [routerLink]="['/postagem-edit', itemPost.id]">Editar</button>
+                    <button class="btn btn-danger" [routerLink]="['/postagem-delete', itemPost.id]">Apagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ! Postagens por Tema -->
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+        <div class=" col-md-12 d-flex justify-content-center" *ngFor='let tema of listaTema'>
+            <h5 class="card-text">Tema: {{tema.titulo}}</h5>
+            <!-- <div class="card">
                    
                 </div> -->
 
-                <div class="card mt-5" style="width: 40rem;"
-                    *ngFor='let itemPost of tema.postagem | orderBy : key : reverse'>
-                    <small>
+            <div class="card mt-5" style="width: 40rem;" *ngFor='let itemPost of tema.postagem | orderBy : key : reverse'>
+                <small>
                         <p class="card-text">Por: {{itemPost.usuario.nome}}</p>
                     </small>
-                    <img *ngIf="itemPost.imagem != null" class="card-img-top w-75" src="{{itemPost.imagem}}"
-                        alt="Imagem de capa do card">
-                    <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
-                    <div class="card-body">
-                        <h5 class="card-text">{{itemPost.titulo}}</h5>
-                        <p class="card-text">{{itemPost.texto}}</p>
-                        <p class="card-text"><small class="text-muted">Publicado em: {{itemPost.data | date:
+                <img *ngIf="itemPost.imagem != null" class="card-img-top w-75" src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
+                <div class="card-body">
+                    <h5 class="card-text">{{itemPost.titulo}}</h5>
+                    <p class="card-text">{{itemPost.texto}}</p>
+                    <p class="card-text"><small class="text-muted">Publicado em: {{itemPost.data | date:
                                 'dd/MM/yyyy'}} ás
                                 {{itemPost.data | date: 'HH:mm'}} </small></p>
-                    </div>
                 </div>
             </div>
-
         </div>
+
     </div>
+</div>
 
 
 
@@ -264,8 +251,7 @@
                 </div>
 
                 <div class="form-group campo">
-                    <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3"
-                        placeholder="Texto *"></textarea>
+                    <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3" placeholder="Texto *"></textarea>
                 </div>
 
                 <div class="form-group campo">
