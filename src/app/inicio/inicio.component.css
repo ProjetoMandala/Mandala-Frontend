@@ -56,9 +56,10 @@ textarea {
     outline: none;
 }
 
-.campo {
+/* .campo {
     position: relative;
-}
+    z-index: 9;
+} */
 
 input:focus {
     outline: 0;
@@ -126,14 +127,20 @@ input:focus {
     background-color: #442E6D;
 }
 
-/* .img_postagem{
+.img_postagem{
     max-width: 600px;
-    max-height: 700px;
-    object-fit: fill;
-} */
+    max-height: 600px;  
+    object-fit: cover;
+    object-position: 50% 50%;  
+}
 
-.postagem-size{
-    
-    max-width: 605px;
-    max-height: 755px;       
+.postagem-size{    
+    max-width: 600px;
+    max-height: auto;      
+}
+
+.campoPesquisa{
+    margin-top: -18rem;
+    position: absolute;
+    z-index: 9;
 }

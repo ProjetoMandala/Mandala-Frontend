@@ -64,6 +64,14 @@
 
 </div>
 
+<div class=" row d-flex justify-content-center  mt-5 mb-5">
+    <div class="col-md-4">
+        <div class="form-group campoPesquisa">
+            <input type="text" class="form-control bg-light" id="titulo" placeholder="Digite um titulo de pesquisa" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
+        </div>
+    </div>
+</div>
+
 
 
 <div class="container mb-5 mt-5" id="posts">
@@ -121,7 +129,7 @@
 
         <div class="tab-content mt-3" id="nav-tabContent">
             <!-- Todas as Postagens -->
-            <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+            <div class="tab-pane fade show active ali" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
               <div class="col-md-12 d-flex justify-content-center">
               <div class="row align-items-center">
                 <div class="card border-secondary mt-3 mb-3 w-100 bodypost postagem-size" *ngFor='let itemPost of listaPostagens | orderBy : key : reverse'>
@@ -148,7 +156,7 @@
                       <span class="text-muted">{{itemPost.tema.titulo}} </span> 
                     </h5>
                   </div>
-                    <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto" style="object-fit: fit; width: 600px; height: 700px;"
+                    <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto img_postagem"
                     src="{{itemPost.imagem}}" alt="Imagem de capa do card">
                 <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
                 <div class="card-body">
