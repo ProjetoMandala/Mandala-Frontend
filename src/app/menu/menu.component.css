@@ -23,7 +23,7 @@ ng-sidebar-container {
     height: 70vh !important;
     position: absolute;
     z-index: 9;
-    width: 20%;
+    width: 19%;
     top: -1.2rem;
     border-radius: 0px 10px 20px 0px;
 }
@@ -38,10 +38,10 @@ ng-sidebar-container {
 
 @media(max-width:120%) {
     ng-sidebar-container {
-        height: 10vh !important;
+        height: 15vh !important;
         position: absolute;
         z-index: 9;
-        width: 0.5%;
+        width: 0.9%;
     }
 }
 
@@ -65,7 +65,7 @@ ng-sidebar-container {
 
 .navigation .close {
     position: relative;
-    left: 7rem;
+    left: 10rem;
     margin-top: -0.4em;
     display: block;
     text-decoration: none;
@@ -170,7 +170,7 @@ ng-sidebar-container {
     .navigation .close i {
         position: relative;
         display: block;
-        margin-left: -9.5rem;
+        margin-left: -10.8rem;
         margin-top: -0.5em;
         margin-bottom: 1rem;
     }
