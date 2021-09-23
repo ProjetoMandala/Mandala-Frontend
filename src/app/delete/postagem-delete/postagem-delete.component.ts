@@ -32,7 +32,7 @@ export class PostagemDeleteComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 //forçando altenticação
-this.authService.refreshToken()
+ this.authService.refreshToken()//
 
     this.idPost = this.route.snapshot.params['id']
     this.findPostagemById(this.idPost)

@@ -42,8 +42,8 @@ export class PostagemEditComponent implements OnInit {
     }
 
 //forçando altenticação
-    this.authService.refreshToken()
-
+ this.authService.refreshToken()//
+ 
     let id = this.route.snapshot.params['id']
     this.findPostagemById(id)
     this.findAllTemas()

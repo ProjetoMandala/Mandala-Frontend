@@ -32,7 +32,7 @@ ngOnInit(){
     }
 
 //forçando altenticação
-    this.authService.refreshToken()
+ this.authService.refreshToken()//
 
     //pegando o parametro da rota
     this.idTema= this.route.snapshot.params['id']
