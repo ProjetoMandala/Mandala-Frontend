@@ -61,10 +61,6 @@ textarea {
 }
 
 input:focus {
-    outline: 0;
-}
-
-input:focus {
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
@@ -126,9 +122,17 @@ input:focus {
     background-color: #442E6D;
 }
 
-.img_postagem{
-    max-width: 600px;
-    max-height: 750px;
-    width: auto;
-    height: auto;
+
+/*campo de pesquisa*/
+
+.campoPesquisa {
+    margin-top: -18rem;
+    position: absolute;
+    z-index: 9;
+    width: 20rem;
+}
+
+.tm-img1 {
+    width: 30rem;
+    height: 25rem;
 }

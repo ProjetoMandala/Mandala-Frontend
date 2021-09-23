@@ -14,13 +14,20 @@ a {
 }
 
 
-/**/
+/*buscar postagem*/
+
+.busca {
+    position: relative;
+    margin-top: 2rem;
+    margin-left: 25rem;
+    width: 20rem;
+}
 
 
 /*teste menu lateral*/
 
 ng-sidebar-container {
-    height: 70vh !important;
+    height: 60vh !important;
     position: absolute;
     z-index: 9;
     width: 19%;
