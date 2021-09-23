@@ -36,7 +36,7 @@ gen: string
     }
 
     //forçando altenticação
-    this.authService.refreshToken()
+     this.authService.refreshToken()
     
 this.idUsuario= this.route.snapshot.params['id']
     this.findByIdUsuario(this.idUsuario)

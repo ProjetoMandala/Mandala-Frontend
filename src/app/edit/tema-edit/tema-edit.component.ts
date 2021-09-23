@@ -31,7 +31,7 @@ export class TemaEditComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     //forçando altenticação
-    // this.authService.refreshToken()
+    this.authService.refreshToken()
     
     //pegando o parametro da rota
     let id = this.route.snapshot.params['id']
