@@ -48,7 +48,7 @@ ng-sidebar-container {
         height: 15vh !important;
         position: absolute;
         z-index: 9;
-        width: 0.5%;
+        width: 0.9%;
     }
 }
 
@@ -72,7 +72,7 @@ ng-sidebar-container {
 
 .navigation .close {
     position: relative;
-    left: 7rem;
+    left: 10rem;
     margin-top: -0.4em;
     display: block;
     text-decoration: none;
