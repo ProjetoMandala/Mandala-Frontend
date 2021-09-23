@@ -57,7 +57,7 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/entrar']);
     }
 //forçando altenticação
-    this.authService.refreshToken()
+ this.authService.refreshToken()
 
      //trazer todos os temas
      this.findAllTemas();

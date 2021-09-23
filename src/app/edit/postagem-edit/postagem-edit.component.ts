@@ -40,8 +40,10 @@ export class PostagemEditComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
+
+//forçando altenticação
     this.authService.refreshToken()
-    
+
     let id = this.route.snapshot.params['id']
     this.findPostagemById(id)
     this.findAllTemas()

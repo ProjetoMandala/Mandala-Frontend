@@ -30,7 +30,8 @@ export class TemaEditComponent implements OnInit {
       // alert("Sua seção expirou, faça o login novamente.");
       this.router.navigate(['/entrar'])
     }
-    this.authService.refreshToken()
+    //forçando altenticação
+    // this.authService.refreshToken()
     
     //pegando o parametro da rota
     let id = this.route.snapshot.params['id']
@@ -47,7 +48,11 @@ export class TemaEditComponent implements OnInit {
 atualizar(){
 
   this.temaService.putTema(this.temaTras).subscribe((resp: Tema)=>{
-      this.temaTras= resp
+
+
+    console.log(resp)
+
+      this.temaTras= resp      
       this.alertas.showAlertSuccess('Tema atualizado com sucesso.')
       this.router.navigate(['/tema'])  
   })

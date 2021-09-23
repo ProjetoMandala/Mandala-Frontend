@@ -16,6 +16,7 @@ export class CadastrarComponent implements OnInit {
   confirmeSenha: string
   gen: string
   tipoUsuario: string
+  imagemUsu: string
   
 
   constructor(
@@ -54,22 +55,44 @@ export class CadastrarComponent implements OnInit {
 
   cadastrar(){
 
-    this.usuarioCad.genero = this.gen;
+    this.usuarioCad.genero = this.gen
 
     this.usuarioCad.tipo = this.tipoUsuario
+
+    this.imagemUsu = 'https://i.imgur.com/TqmVCQD.png'
 
     if (this.usuarioCad.senha != this.confirmeSenha) {
 
       this.alertas.showAlertDanger("As senhas estão diferentes.");
       
     } else {
-      console.log(this.usuarioCad)
-      this.authService.cadastrar(this.usuarioCad).subscribe((resp: Usuario) =>{
 
-        this.usuarioCad = resp;
-        this.router.navigate(["/entrar"])
-        this.alertas.showAlertSuccess("Usuário cadastrado com sucesso!")
-      })
+      if (this.usuarioCad.imagem_perfil == null) {
+
+        this.usuarioCad.imagem_perfil = this.imagemUsu
+
+       // console.log(this.usuarioCad)
+        this.authService.cadastrar(this.usuarioCad).subscribe((resp: Usuario) =>{
+  
+          this.usuarioCad = resp;
+          this.router.navigate(["/entrar"])
+          this.alertas.showAlertSuccess("Usuário cadastrado com sucesso!")
+        })
+        
+      } else {
+
+        console.log(this.usuarioCad)
+        this.authService.cadastrar(this.usuarioCad).subscribe((resp: Usuario) =>{
+  
+          this.usuarioCad = resp;
+          this.router.navigate(["/entrar"])
+          this.alertas.showAlertSuccess("Usuário cadastrado com sucesso!")
+        })
+        
+      }
+   
+
+
     }
 
   }

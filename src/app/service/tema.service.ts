@@ -38,7 +38,6 @@ getByIdTemaTitulo(titulo: string): Observable<Tema[]>{
 }
 
 
-
 //metodo alterar tema
 putTema(temaEdit: Tema): Observable<Tema>{
   return this.http.put<Tema>('https://projetomandala.herokuapp.com/tema', temaEdit, this.token)

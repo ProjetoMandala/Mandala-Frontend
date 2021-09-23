@@ -30,8 +30,10 @@ ngOnInit(){
       // alert("Sua seção expirou, faça o login novamente.");
       this.router.navigate(['/entrar'])
     }
+
+//forçando altenticação
     this.authService.refreshToken()
-    
+
     //pegando o parametro da rota
     this.idTema= this.route.snapshot.params['id']
     this.findByIdTema( this.idTema)

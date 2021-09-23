@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
 import { AlertasService } from '../service/alertas.service';
+import { AuthService } from '../service/auth.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -15,15 +16,19 @@ export class TemaComponent implements OnInit {
   listaTema: Tema[];
 
   constructor(private router: Router, 
+    public authService: AuthService,
+
     private temaService: TemaService,
     private alerta: AlertasService) {}
 
   ngOnInit() {
     window.scroll(0, 0);
     if (environment.token == '') {
-      this.alerta.showAlertDanger('Sua seção expirou, faça o login novamente');
+    //  this.alerta.showAlertDanger('Sua seção expirou, faça o login novamente');
       this.router.navigate(['/entrar']);
     }
+// aqui não precisa forçar a altenticação, poi se isso ocorrer irá dar erros em outros campos
+    // this.authService.refreshToken()
 
     //trazer todos os temas
     this.findAllTemas();

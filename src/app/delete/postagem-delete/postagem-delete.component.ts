@@ -31,8 +31,8 @@ export class PostagemDeleteComponent implements OnInit {
     if (environment.token == ''){
       this.router.navigate(['/entrar'])
     }
-    this.authService.refreshToken()
-
+//forçando altenticação
+this.authService.refreshToken()
 
     this.idPost = this.route.snapshot.params['id']
     this.findPostagemById(this.idPost)
