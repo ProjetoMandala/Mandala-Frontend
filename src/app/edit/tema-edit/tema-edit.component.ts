@@ -39,25 +39,20 @@ export class TemaEditComponent implements OnInit {
   }
 
   findByIdTema(id: number){
-    this.temaService.getByIdTema(id).subscribe((resp: Tema)=>{
-  
+    this.temaService.getByIdTema(id).subscribe((resp: Tema)=>{  
       this.temaTras = resp
-  
-    })
-  
-    }
+      })  
+  }
 
-    atualizar(){
+atualizar(){
 
-      this.temaService.putTema(this.temaTras).subscribe((resp: Tema)=>{
-  
-          this.temaTras= resp
-          this.alertas.showAlertSuccess('Tema atualizado com sucesso😁')
-          this.router.navigate(['/tema'])
-      
-      })
-    
-    }
+  this.temaService.putTema(this.temaTras).subscribe((resp: Tema)=>{
+      this.temaTras= resp
+      this.alertas.showAlertSuccess('Tema atualizado com sucesso.')
+      this.router.navigate(['/tema'])  
+  })
+
+}
   
     
 
