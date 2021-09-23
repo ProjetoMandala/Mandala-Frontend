@@ -8,19 +8,21 @@
                             <img src="{{imagem_perfil}}" alt="imagem do user" width="50px" height="50px" class="rounded-circle" />
 
                             <button type="button" class="btn btn-outline-secondary btn-md ml-4" style="width: 80%" data-toggle="modal" data-target="#novaPostagem">
-                Olá {{nome}}, o que há de novo?
-              </button>
+                            Olá {{nome}}, o que há de novo?
+                        </button>
                         </p>
                         <hr />
                         <div class="container-fluid d-flex justify-content-center">
                             <label class="btn btn-default mr-5" data-toggle="modal" data-target="#novaPostagem">
-                <img class="iconFoto" src="https://i.imgur.com/3Vxv2W2.png" style="width: 20px; height: 20px;" />
-                Foto <input type="button" hidden />
-              </label>
+                                <img class="iconFoto" src="https://i.imgur.com/3Vxv2W2.png"
+                                    style="width: 20px; height: 20px;" />
+                                Foto <input type="button" hidden />
+                            </label>
                             <label class="btn btn-default mr-5" data-toggle="modal" data-target="#novaPostagem">
-                <img class="icon" style="width: 20px; height: 20px;" src="https://i.imgur.com/2kGNjeH.png" />
-                Vídeo <input type="button" hidden />
-              </label>
+                                <img class="icon" style="width: 20px; height: 20px;"
+                                    src="https://i.imgur.com/2kGNjeH.png" />
+                                Vídeo <input type="button" hidden />
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -201,56 +203,62 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
 
 
-            <!-- Modal -->
-            <div class="modal fade" id="novaPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content p-3 teste">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Nova Postagem</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="novaPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3 teste">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nova Postagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-                        </div>
-                        <div class="modal-body">
+            </div>
+            <div class="modal-body">
 
-                            <div class="form-group campo">
-                                <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" required>
-                                <label for="titulo">Título *</label>
-                            </div>
+                <div class="form-group campo">
+                    <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" required>
+                    <label for="titulo">Título *</label>
+                </div>
 
-                            <div class="form-group campo">
-                                <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3" placeholder="Texto *"></textarea>
-                            </div>
-                            <div class="form-group campo">
-                                <input [(ngModel)]='postagem.imagem' type="text" class="form-control" id="imagem" required>
-                                <label for="imagem">Imagem</label>
-                            </div>
+                <div class="form-group campo">
+                    <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3" placeholder="Texto *"></textarea>
+                </div>
+                <div class="form-group campo">
+                    <input [(ngModel)]='postagem.imagem' type="text" class="form-control" id="imagem" required>
+                    <label for="imagem">Imagem</label>
+                </div>
 
 
-                            <div class="form-group campo">
-                                <input [(ngModel)]='postagem.video' type="text" class="form-control" id="video" required>
-                                <label for="video">Vídeo</label>
-                            </div>
+                <div class="form-group campo">
+                    <input [(ngModel)]='postagem.video' type="text" class="form-control" id="video" required>
+                    <label for="video">Vídeo</label>
+                </div>
 
-                            <div class="form-group">
-                                <label for="tema">Escolha um tema <a data-dismiss="modal" routerLink="/tema"
+                <div class="form-group">
+                    <label for="tema">Escolha um tema <a data-dismiss="modal" routerLink="/tema"
                     *ngIf='authService.adm()'>ou
                     cadastre um novo</a>: </label>
-                                <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                    <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                   <option *ngFor='let temas of listaTema' value="{{temas.id}}">
                     {{temas.titulo}}</option>
                 </select>
 
-                            </div>
-
-                        </div>
-                        <div class="modal-footer justify-content-center">
-                            <button type="button" class="btn btn-roxo" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-outro-roxo" (click)='publicar()'>Publicar</button>
-                        </div>
-                    </div>
                 </div>
+
             </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-roxo" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-outro-roxo" (click)='publicar()'>Publicar</button>
+            </div>
+        </div>
+    </div>
+</div>
