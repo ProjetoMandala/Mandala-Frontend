@@ -125,12 +125,14 @@ input:focus {
 
 /*campo de pesquisa*/
 
+
+/* 
 .campoPesquisa {
     margin-top: -18rem;
     position: absolute;
     z-index: 9;
     width: 20rem;
-}
+} */
 
 .tm-img1 {
     width: 30rem;
