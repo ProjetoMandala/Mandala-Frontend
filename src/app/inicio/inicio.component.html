@@ -59,7 +59,7 @@
         <div class="tab-pane fade show active" id="pills-todos" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
             <div class=" row d-flex justify-content-center  mt-5 mb-5">
                 <div class="col-md-4">
-                    <div class="form-group campoPesquisa">
+                    <div class="form-group ">
                         <input type="text" class="form-control bg-light" id="titulo" placeholder="🔍 buscar postagens." [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
                     </div>
                 </div>
@@ -157,6 +157,15 @@
 
         <!-- ! Postagens por Tema -->
         <div class="tab-pane fade " id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+            <div class=" row d-flex justify-content-center  mt-5 ">
+                <div class="col-md-4 mb-5">
+                    <div class="form-group ">
+                        <input type="text" class="form-control bg-light" id="titulo" placeholder=" 🔍 Pesquisa titulo por tema." [(ngModel)]='temaTitulo' (keyup)='findByTemaTitulo()'>
+                    </div>
+                </div>
+            </div>
+
             <div class="row ">
                 <div class="container">
                     <div class="col-md-12 d-flex justify-content-center" *ngFor='let tema of listaTema'>
