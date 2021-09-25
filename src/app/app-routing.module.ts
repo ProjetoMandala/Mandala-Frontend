@@ -11,6 +11,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import{MenuComponent} from './menu/menu.component';
 
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { TemaPostagemComponent } from './tema-postagem/tema-postagem.component';
 import { TemaComponent } from './tema/tema.component';
 
 const routes: Routes = [
@@ -31,6 +32,8 @@ const routes: Routes = [
   {path: 'postagem-delete/:id', component: PostagemDeleteComponent},
 
   {path: 'usuario-edit/:id', component: UsuarioEditComponent},
+
+  {path: 'temapost', component: TemaPostagemComponent },
 
   {path: 'sobre', component: SobreNosComponent }
 

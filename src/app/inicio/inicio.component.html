@@ -44,12 +44,12 @@
         </li>
 
         <li class="nav-item" role="presentation">
-            <a (click)='findByIdUsu()' class="nav-link segundo" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Meus posts</a>
+            <a (click)='findByIdUsu()' class="nav-link terceiro" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Meus posts</a>
         </li>
 
-        <li class="nav-item" role="presentation">
+        <!-- <li class="nav-item" role="presentation">
             <a class="nav-link terceiro" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Posts por tema</a>
-        </li>
+        </li> -->
 
     </ul>
 
@@ -156,7 +156,7 @@
         </div>
 
         <!-- ! Postagens por Tema -->
-        <div class="tab-pane fade " id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+        <!-- <div class="tab-pane fade " id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 
             <div class=" row d-flex justify-content-center  mt-5 ">
                 <div class="col-md-4 mb-5">
@@ -206,60 +206,60 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="novaPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content p-3 teste">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nova Postagem</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <!-- Modal -->
+        <div class="modal fade" id="novaPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-3 teste">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nova Postagem</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-            </div>
-            <div class="modal-body">
+                    </div>
+                    <div class="modal-body">
 
-                <div class="form-group campo">
-                    <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" required>
-                    <label for="titulo">Título *</label>
-                </div>
+                        <div class="form-group campo">
+                            <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" required>
+                            <label for="titulo">Título *</label>
+                        </div>
 
-                <div class="form-group campo">
-                    <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3" placeholder="Texto *"></textarea>
-                </div>
-                <div class="form-group campo">
-                    <input [(ngModel)]='postagem.imagem' type="text" class="form-control" id="imagem" required>
-                    <label for="imagem">Imagem</label>
-                </div>
+                        <div class="form-group campo">
+                            <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3" placeholder="Texto *"></textarea>
+                        </div>
+                        <div class="form-group campo">
+                            <input [(ngModel)]='postagem.imagem' type="text" class="form-control" id="imagem" required>
+                            <label for="imagem">Imagem</label>
+                        </div>
 
 
-                <div class="form-group campo">
-                    <input [(ngModel)]='postagem.video' type="text" class="form-control" id="video" required>
-                    <label for="video">Vídeo</label>
-                </div>
+                        <div class="form-group campo">
+                            <input [(ngModel)]='postagem.video' type="text" class="form-control" id="video" required>
+                            <label for="video">Vídeo</label>
+                        </div>
 
-                <div class="form-group">
-                    <div>
-                        <!-- <label for="tema">Escolha um tema  <a  data-dismiss="modal" routerLink="/tema" *ngIf='authService.adm()'> ou cadastre um novo</a>: </label> -->
+                        <div class="form-group">
+                            <div>
+                                <!-- <label for="tema">Escolha um tema  <a  data-dismiss="modal" routerLink="/tema" *ngIf='authService.adm()'> ou cadastre um novo</a>: </label> -->
 
-                        <label for="tema">Escolha um tema: </label>
-                        <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                                <label for="tema">Escolha um tema: </label>
+                                <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                           <option *ngFor='let temas of listaTema' value="{{temas.id}}">{{temas.titulo}}</option>
                         </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-roxo" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-outro-roxo" (click)='publicar()'>Publicar</button>
                     </div>
                 </div>
-
-            </div>
-            <div class="modal-footer justify-content-center">
-                <button type="button" class="btn btn-roxo" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-outro-roxo" (click)='publicar()'>Publicar</button>
             </div>
         </div>
-    </div>
-</div>

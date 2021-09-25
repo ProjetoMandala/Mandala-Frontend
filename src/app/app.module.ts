@@ -22,6 +22,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SidebarModule } from 'ng-sidebar';
+import { TemaPostagemComponent } from './tema-postagem/tema-postagem.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { SidebarModule } from 'ng-sidebar';
     PostagemDeleteComponent,
     PostagemEditComponent,
     UsuarioEditComponent,
-    AlertasComponent
+    AlertasComponent,
+    TemaPostagemComponent
   ],
   imports: [
     BrowserModule,

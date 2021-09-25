@@ -1,0 +1,196 @@
+<div class="container mb-5 mt-5" id="posts">
+    <!-- titulo das postagens -->
+    <ul class="nav nav-pills d-flex just justify-content-center mb-5 mt-0" id="pills-tab" role="tablist">
+
+
+        <li class="nav-item" role="presentation" *ngFor='let tema of listaTema'>
+            <a class="nav-link  active primeiro" data-toggle="pill" href="#pills-lugar" role="tab" aria-controls="pills-lugar" aria-selected="true" *ngIf='tema.id==11'>{{tema.titulo}} </a>
+        </li>
+
+        <li class="nav-item" role="presentation" *ngFor='let tema of listaTema'>
+            <a class="nav-link  segundo" data-toggle="pill" href="#pills-noticia" role="tab" aria-controls="pills-noticia" aria-selected="true" *ngIf='tema.id==13'>{{tema.titulo}} </a>
+        </li>
+
+        <li class="nav-item" role="presentation" *ngFor='let tema of listaTema'>
+            <a class="nav-link  terceiro" data-toggle="pill" href="#pills-depoimento" role="tab" aria-controls="pills-depoimento" aria-selected="true" *ngIf='tema.id==12'>{{tema.titulo}} </a>
+        </li>
+
+        <li class="nav-item" role="presentation" *ngFor='let tema of listaTema'>
+            <a class="nav-link  quarto" data-toggle="pill" href="#pills-evento" role="tab" aria-controls="pills-evento" aria-selected="true" *ngIf='tema.id==10'>{{tema.titulo}} </a>
+        </li>
+
+
+    </ul>
+
+    <!-- carregando  tema por postagens  -->
+    <div class="tab-content mt-3 " id="nav-tabContent">
+        <!-- LUGARES -->
+        <div class="tab-pane fade show active" id="pills-lugar" role="tabpanel" aria-labelledby="nav-lugar-tab">
+
+
+            <div class="row ">
+                <div class="container">
+                    <div class="col-md-12 d-flex justify-content-center" *ngFor='let tema of listaTema'>
+                        <div class="col-md-8  " *ngIf='tema.id==11'>
+                            <div class="card border-secondary mt-3 mb-3 w-100 bodypost" *ngFor='let itemPost of tema.postagem | orderBy : key : reverse '>
+                                <div class="card-header color-header border-secondary">
+                                    <div class=" d-flex justify-content-between align-items-center">
+                                        <div class="d-flex justify-content-between align-items-center ">
+                                            <div class="mr-2">
+                                                <img class="rounded-circle" src="{{itemPost.usuario.imagem_perfil}}" alt="Imagem do Usuário" width="50px" height="50px" class="rounded-circle">
+                                            </div>
+                                            <div class="ml-2 mt-2">
+                                                <div class="h5 m-0">{{itemPost.usuario.nome}}</div>
+                                                <div class="h7 text-muted">
+                                                    <p class="text-muted">{{itemPost.data| date:'dd/MM/yyyy '}} às {{itemPost.data| date: 'HH:mm '}}
+                                                        <i class="fa fa-clock-o" aria-hidden="true"></i></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body text-center  ">
+                                    <div class=" mb-3 ">
+                                        <h5 class="card-title text-center  ">{{ itemPost.titulo }}</h5>
+                                        <p class="card-text mt-3 text-justify ">{{ itemPost.texto}}</p>
+                                    </div>
+
+                                    <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto tm-img1 " src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                                    <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOTICIAS -->
+        <div class="tab-pane fade " id="pills-noticia" role="tabpanel" aria-labelledby="pills-noticia-tab">
+            <div class="row ">
+                <div class="container">
+                    <div class="col-md-12 d-flex justify-content-center" *ngFor='let tema of listaTema'>
+                        <div class="col-md-8  " *ngIf='tema.id==13'>
+                            <div class="card border-secondary mt-3 mb-3 w-100 bodypost" *ngFor='let itemPost of tema.postagem | orderBy : key : reverse '>
+                                <div class="card-header color-header border-secondary">
+                                    <div class=" d-flex justify-content-between align-items-center">
+                                        <div class="d-flex justify-content-between align-items-center ">
+                                            <div class="mr-2">
+                                                <img class="rounded-circle" src="{{itemPost.usuario.imagem_perfil}}" alt="Imagem do Usuário" width="50px" height="50px" class="rounded-circle">
+                                            </div>
+                                            <div class="ml-2 mt-2">
+                                                <div class="h5 m-0">{{itemPost.usuario.nome}}</div>
+                                                <div class="h7 text-muted">
+                                                    <p class="text-muted">{{itemPost.data| date:'dd/MM/yyyy '}} às {{itemPost.data| date: 'HH:mm '}}
+                                                        <i class="fa fa-clock-o" aria-hidden="true"></i></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body text-center  ">
+                                    <div class=" mb-3 ">
+                                        <h5 class="card-title text-center  ">{{ itemPost.titulo }}</h5>
+                                        <p class="card-text mt-3 text-justify ">{{ itemPost.texto}}</p>
+                                    </div>
+
+                                    <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto tm-img1 " src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                                    <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEPOIMENTOS -->
+        <div class="tab-pane fade show active" id="pills-depoimento" role="tabpanel" aria-labelledby="pills-depoimento-tab">
+            <div class="row ">
+                <div class="container">
+                    <div class="col-md-12 d-flex justify-content-center" *ngFor='let tema of listaTema'>
+                        <div class="col-md-8" *ngIf='tema.id==12'>
+                            <div class="card border-secondary mt-3 mb-3 w-100 bodypost" *ngFor='let itemPost of tema.postagem | orderBy : key : reverse '>
+                                <div class="card-header color-header border-secondary">
+                                    <div class=" d-flex justify-content-between align-items-center">
+                                        <div class="d-flex justify-content-between align-items-center ">
+                                            <div class="mr-2">
+                                                <img class="rounded-circle" src="{{itemPost.usuario.imagem_perfil}}" alt="Imagem do Usuário" width="50px" height="50px" class="rounded-circle">
+                                            </div>
+                                            <div class="ml-2 mt-2">
+                                                <div class="h5 m-0">{{itemPost.usuario.nome}}</div>
+                                                <div class="h7 text-muted">
+                                                    <p class="text-muted">{{itemPost.data| date:'dd/MM/yyyy '}} às {{itemPost.data| date: 'HH:mm '}}
+                                                        <i class="fa fa-clock-o" aria-hidden="true"></i></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body text-center  ">
+                                    <div class=" mb-3 ">
+                                        <h5 class="card-title text-center  ">{{ itemPost.titulo }}</h5>
+                                        <p class="card-text mt-3 text-justify ">{{ itemPost.texto}}</p>
+                                    </div>
+
+                                    <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto tm-img1 " src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                                    <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EVENTOS -->
+        <div class="tab-pane fade show active" id="pills-evento" role="tabpanel" aria-labelledby="pills-evento-tab">
+            <div class="row ">
+                <div class="container">
+                    <div class="col-md-12 d-flex justify-content-center" *ngFor='let tema of listaTema'>
+                        <div class="col-md-8" *ngIf='tema.id==10'>
+                            <div class="card border-secondary mt-3 mb-3 w-100 bodypost" *ngFor='let itemPost of tema.postagem | orderBy : key : reverse '>
+                                <div class="card-header color-header border-secondary">
+                                    <div class=" d-flex justify-content-between align-items-center">
+                                        <div class="d-flex justify-content-between align-items-center ">
+                                            <div class="mr-2">
+                                                <img class="rounded-circle" src="{{itemPost.usuario.imagem_perfil}}" alt="Imagem do Usuário" width="50px" height="50px" class="rounded-circle">
+                                            </div>
+                                            <div class="ml-2 mt-2">
+                                                <div class="h5 m-0">{{itemPost.usuario.nome}}</div>
+                                                <div class="h7 text-muted">
+                                                    <p class="text-muted">{{itemPost.data| date:'dd/MM/yyyy '}} às {{itemPost.data| date: 'HH:mm '}}
+                                                        <i class="fa fa-clock-o" aria-hidden="true"></i></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body text-center  ">
+                                    <div class=" mb-3 ">
+                                        <h5 class="card-title text-center  ">{{ itemPost.titulo }}</h5>
+                                        <p class="card-text mt-3 text-justify ">{{ itemPost.texto}}</p>
+                                    </div>
+
+                                    <img *ngIf="itemPost.imagem != null" class="img-thumbnail mx-auto tm-img1 " src="{{itemPost.imagem}}" alt="Imagem de capa do card">
+                                    <video *ngIf="itemPost.video != null" width="320" height="240" controls>{{itemPost.video}}</video>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
