@@ -36,18 +36,18 @@
                             <span class="title ">Home</span>
                         </a>
                     </li>
-                    <li class="list ">
+                    <!-- <li class="list ">
                         <b></b>
                         <b></b>
                         <a [routerLink]="['/usuario-edit',idUsu]" (click)="toggleSidebar()">
                             <span class="icon "><i class="fa fa-user " aria-hidden="true "></i></span>
                             <span class="title ">Editar</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="list ">
                         <b></b>
                         <b></b>
-                        <a routerLink="/inicio" (click)="toggleSidebar()">
+                        <a routerLink="/tema" *ngIf='authService.adm()' (click)="toggleSidebar()">
                             <span class="icon ">
                                 <!-- <i class="fa fa-pencil-square-o " aria-hidden="true "></i> -->
                                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
